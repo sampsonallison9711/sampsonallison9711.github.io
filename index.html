@@ -1,1086 +1,961 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>木头泛目录｜把常用资源整理得体，快速找到可用信息</title>
-  <meta name="keywords" content="木头泛目录,资源目录,信息聚合,工具导航,热门入口,本地服务,行业清单">
-  <meta name="description" content="木头泛目录是面向日常与工作常用信息的聚合型入口页，覆盖工具导航、资源清单、热点入口与专题专题卡片，让每一次查找都更快、更稳。站内以“可用性与更新频率”为优先标准，提供清晰的标题与副信息、状态标签与轻量统计，并支持筛选与搜索，帮助你把散落的信息集中到一处。">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>春天到了｜花期预报·踏青路线·时令春菜与换季指南</title>
+<meta name="keywords" content="春天到了,花期预报,赏花时间表,踏青路线,春菜清单,春游攻略,换季穿搭,春季过敏">
+<meta name="description" content="春天到了，万物一起醒过来。这里每天更新全国主要城市的花期预报与赏花点位，整理城郊踏青路线、公园绿地开放时间与亲子春游清单，也把春笋、香椿、荠菜等时令春菜和市集摊位收进一张表。换季穿搭、过敏防护、居家收纳、春日摄影这些季节里的具体问题，都能在这里找到可以直接照着做的答案。">
+<link rel="canonical" href="https://ctdl.pages.dev/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="春天到了">
+<meta property="og:title" content="春天到了｜花期预报·踏青路线·时令春菜与换季指南">
+<meta property="og:description" content="春天到了，万物一起醒过来。这里每天更新全国主要城市的花期预报与赏花点位，整理城郊踏青路线、公园绿地开放时间与亲子春游清单，也把春笋、香椿、荠菜等时令春菜和市集摊位收进一张表。换季穿搭、过敏防护、居家收纳、春日摄影这些季节里的具体问题，都能在这里找到可以直接照着做的答案。">
+<meta property="og:url" content="https://ctdl.pages.dev/">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="春天到了｜花期预报·踏青路线·时令春菜与换季指南">
+<meta name="twitter:description" content="春天到了，万物一起醒过来。这里每天更新花期预报与赏花点位，整理城郊踏青路线、公园绿地开放时间与亲子春游清单，也把春笋、香椿、荠菜等时令春菜收进一张表。换季穿搭、过敏防护、居家收纳、春日摄影，都能找到可以直接照着做的答案。">
+<meta name="theme-color" content="#2f7d5d">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="assets/vendor/foundation/css/foundation.min.css">
 
-  <link rel="canonical" href="https://mtfml.pages.dev/" />
-  <meta property="og:locale" content="zh_CN" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mtfml.pages.dev/" />
-  <meta property="og:title" content="木头泛目录｜把常用资源整理得体，快速找到可用信息" />
-  <meta property="og:description" content="木头泛目录是面向日常与工作常用信息的聚合型入口页，覆盖工具导航、资源清单、热点入口与专题专题卡片，让每一次查找都更快、更稳。站内以“可用性与更新频率”为优先标准，提供清晰的标题与副信息、状态标签与轻量统计，并支持筛选与搜索，帮助你把散落的信息集中到一处。无论你找的是学习资料、效率工具，还是行业常用入口，都能在整洁的卡片网格中快速定位到合适条目。欢迎体验木头泛目录的现代信息组织方式。" />
-  <meta property="og:site_name" content="木头泛目录" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="木头泛目录｜把常用资源整理得体，快速找到可用信息" />
-  <meta name="twitter:description" content="木头泛目录是面向日常与工作常用信息的聚合型入口页，覆盖工具导航、资源清单、热点入口与专题专题卡片，让每一次查找都更快、更稳。站内以“可用性与更新频率”为优先标准，提供清晰的标题与副信息、状态标签与轻量统计，并支持筛选与搜索，帮助你把散落的信息集中到一处。无论你找的是学习资料、效率工具，还是行业常用入口，都能在整洁的卡片网格中快速定位到合适条目。欢迎体验木头泛目录的现代信息组织方式。" />
-
-  <meta name="theme-color" content="#8B5E3C" />
-
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  
-
-  <script>
-    function createToast(message){
-      const t = document.createElement('div');
-      t.style.position='fixed';
-      t.style.right='16px';
-      t.style.bottom='16px';
-      t.style.zIndex='9999';
-      t.style.maxWidth='90vw';
-      t.style.padding='12px 14px';
-      t.style.borderRadius='16px';
-      t.style.border='1px solid rgba(200,155,90,.55)';
-      t.style.background='rgba(245,239,230,.92)';
-      t.style.boxShadow='0 20px 46px rgba(31,26,22,.18)';
-      t.style.color='rgba(31,26,22,.95)';
-      t.style.fontWeight='900';
-      t.style.letterSpacing='.2px';
-      t.style.lineHeight='1.4';
-      t.innerText = message;
-      document.body.appendChild(t);
-      setTimeout(()=>{ t.style.transition='opacity .25s ease, transform .25s ease'; t.style.opacity='0'; t.style.transform='translateY(6px)'; }, 1900);
-      setTimeout(()=>{ t.remove(); }, 2400);
-    }
-
-    function setupInteraction(){
-      const tags = document.querySelectorAll('.tag[data-filter]');
-      const searchForm = document.getElementById('siteSearchForm');
-      const searchInput = document.getElementById('siteSearchInput');
-      const sortSelect = document.getElementById('sortSelect');
-      const resultGrid = document.getElementById('resultGrid');
-
-      const cards = Array.from(resultGrid.querySelectorAll('.card-wood'));
-      function getCardFilters(card){
-        const dataset = card.dataset || {};
-        return {
-          hot: dataset.hot === '1',
-          recommended: dataset.recommended === '1',
-          available: dataset.available === '1',
-          category: dataset.category || '',
-          type: dataset.type || ''
-        };
-      }
-
-      let activeFilters = new Set();
-
-      tags.forEach(tag=>{
-        tag.addEventListener('click', ()=>{
-          const key = tag.getAttribute('data-filter');
-          const isOn = tag.getAttribute('aria-pressed') === 'true';
-          if(isOn){
-            tag.setAttribute('aria-pressed','false');
-            activeFilters.delete(key);
-          }else{
-            tag.setAttribute('aria-pressed','true');
-            activeFilters.add(key);
-          }
-          apply();
-        });
-      });
-
-      function apply(){
-        const sort = sortSelect.value || 'relevance';
-        const query = (searchInput.value || '').trim().toLowerCase();
-
-        const filtered = cards.filter(card=>{
-          const f = getCardFilters(card);
-
-          for(const key of activeFilters){
-            if(key === 'hot' && !f.hot) return false;
-            if(key === 'recommended' && !f.recommended) return false;
-            if(key === 'available' && !f.available) return false;
-            if(key.startsWith('cat:')){
-              const cat = key.slice(4);
-              if(f.category !== cat) return false;
-            }
-          }
-
-          if(query){
-            const t = (card.querySelector('.card-title')?.innerText || '').toLowerCase();
-            const s = (card.querySelector('.card-sub')?.innerText || '').toLowerCase();
-            const badge = (card.querySelector('.card-badges')?.innerText || '').toLowerCase();
-            return (t + ' ' + s + ' ' + badge).includes(query);
-          }
-          return true;
-        });
-
-        const score = (card)=>{
-          const f = getCardFilters(card);
-          let v = 0;
-          if(f.recommended) v += 30;
-          if(f.available) v += 20;
-          if(f.hot) v += 10;
-          if(f.category) v += 3;
-          return v;
-        };
-
-        if(sort === 'recent'){
-          // 这里用“轻量统计数”模拟新近度
-          filtered.sort((a,b)=>{
-            const sa = parseInt(a.dataset.views || '0',10);
-            const sb = parseInt(b.dataset.views || '0',10);
-            return sb - sa;
-          });
-        }else if(sort === 'popular'){
-          filtered.sort((a,b)=>{
-            const sa = parseInt(a.dataset.favs || '0',10);
-            const sb = parseInt(b.dataset.favs || '0',10);
-            return sb - sa;
-          });
-        }else{
-          filtered.sort((a,b)=> score(b) - score(a));
-        }
-
-        resultGrid.innerHTML = '';
-        filtered.forEach(card=>{
-          resultGrid.appendChild(card);
-        });
-
-        if(filtered.length === 0){
-          const empty = document.createElement('div');
-          empty.className = 'card-wood';
-          empty.style.gridColumn = '1 / -1';
-          empty.innerHTML = `
-            <div class="card-inner">
-              <p class="card-title" style="margin-bottom:6px;">没有匹配的条目</p>
-              <p class="card-sub">试试调整筛选标签或换个关键词。</p>
-            </div>
-          `;
-          resultGrid.appendChild(empty);
-        }
-      }
-
-      searchForm.addEventListener('submit', (e)=>{
-        e.preventDefault();
-        apply();
-        createToast('已筛选并更新结果');
-      });
-
-      sortSelect.addEventListener('change', ()=>{
-        apply();
-      });
-
-      apply();
-    }
-
-    document.addEventListener('DOMContentLoaded', ()=>{
-      setupInteraction();
-
-      const drawer = document.getElementById('mobileDrawer');
-      const toggle = document.getElementById('mobileToggle');
-      if(toggle && drawer){
-        toggle.addEventListener('click', ()=>{
-          const isOpen = drawer.getAttribute('data-open') === '1';
-          drawer.setAttribute('data-open', isOpen ? '0' : '1');
-          drawer.style.display = isOpen ? 'none' : 'block';
-        });
-        drawer.style.display = 'none';
-        drawer.setAttribute('data-open','0');
-      }
-
-      const jumpBtns = document.querySelectorAll('[data-jump]');
-      jumpBtns.forEach(btn=>{
-        btn.addEventListener('click', ()=>{
-          const id = btn.getAttribute('data-jump');
-          const el = document.getElementById(id);
-          if(el){
-            el.scrollIntoView({behavior:'smooth', block:'start'});
-          }
-        });
-      });
-    });
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "木头泛目录",
-    "url": "https://mtfml.pages.dev/",
-    "description": "木头泛目录提供工具导航、资源清单与热点入口的卡片化聚合体验，让常用信息更快被找到。",
-    "publisher": {
-      "@type": "Organization",
-      "name": "木头泛目录"
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://mtfml.pages.dev/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 <meta name="applicable-device" content="pc,mobile">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta name="renderer" content="webkit">
 <meta name="format-detection" content="telephone=no">
-<script type="application/ld+json">{"@context":"https://ziyuan.baidu.com/contexts/cambrian.jsonld","@id":"https://mtfml.pages.dev/","title":"木头泛目录｜把常用资源整理得体，快速找到可用信息","pubDate":"2026-10-17T23:50:37","upDate":"2026-10-17T23:50:37"}</script>
-<link rel="stylesheet" href="assets/ckz5aw.css">
+<script type="application/ld+json">{"@context":"https://ziyuan.baidu.com/contexts/cambrian.jsonld","@id":"https://ctdl.pages.dev/","title":"春天到了｜花期预报·踏青路线·时令春菜与换季指南","pubDate":"2026-10-18T00:43:43","upDate":"2026-10-18T00:43:43"}</script>
+<link rel="stylesheet" href="assets/u24ep4.css">
 </head>
-
 <body>
-  <header class="site-header">
-    <div class="container-x">
-      <div class="nav-inner">
-        <a class="brand" href="/" aria-label="木头泛目录首页">
-          <div class="brand-mark" aria-hidden="true"></div>
-          <div class="brand-text">
-            <div class="brand-name">木头泛目录</div>
-            <div class="brand-tag">温暖、可靠的入口聚合</div>
-          </div>
-        </a>
 
-        <div class="nav-right">
-          <button id="mobileToggle" class="mobile-toggle" type="button" aria-label="展开分类导航">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 7h16"></path>
-              <path d="M4 12h16"></path>
-              <path d="M4 17h16"></path>
-            </svg>
-            分类导航
-          </button>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="/" aria-label="春天到了 首页">
+      <span class="brand-mark" aria-hidden="true">春</span>
+      <span class="brand-text">
+        <span class="brand-name">春天到了</span>
+        <span class="brand-sub">Spring Field Notes</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#huaxun" class="is-active">花期预报</a>
+      <a href="#luyan">踏青路线</a>
+      <a href="#chuncai">时令春菜</a>
+      <a href="#chuanda">换季穿搭</a>
+      <a href="#lvdi">绿地速查</a>
+      <a href="#wenda">常见问答</a>
+    </nav>
+    <a class="nav-cta" href="#dingyue">订阅春日周报</a>
+  </div>
+</header>
 
-          <div class="header-search" aria-label="站内搜索">
-            <form id="siteSearchForm" class="search-wrap" autocomplete="off">
-              <div class="search-icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="7"></circle>
-                  <path d="M21 21l-4.3-4.3"></path>
-                </svg>
-              </div>
-              <input id="siteSearchInput" class="search-field" type="search" placeholder="搜索条目：工具、入口、资源清单…" aria-label="搜索条目" />
-              <button class="search-btn" type="submit" aria-label="搜索">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 21l-4.35-4.35"></path>
-                  <circle cx="11" cy="11" r="7"></circle>
-                </svg>
-                搜索
-              </button>
-            </form>
-          </div>
+<nav class="crumbs" aria-label="面包屑导航">
+  <a href="/">首页</a>
+  <span class="sep">›</span>
+  <a href="#huaxun">季节花讯</a>
+  <span class="sep">›</span>
+  <span class="current">春天到了</span>
+</nav>
 
-          <nav class="nav-grid" aria-label="核心分类入口">
-            <a class="nav-chip active" href="/" aria-current="page">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M3 9l9-7 9 7"></path>
-                <path d="M9 22V12h6v10"></path>
-              </svg>
-              全部入口
-            </a>
-            <a class="nav-chip" href="#hot" data-jump="hot">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 2l1.2 4.2L17.4 7 13.6 9.6 12 14l-1.6-4.4L6.6 7l4.2-.8L12 2z"></path>
-                <path d="M5 22h14"></path>
-              </svg>
-              热门优先
-            </a>
-            <a class="nav-chip" href="#recommended" data-jump="recommended">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 17l-5 3 1.2-5.7L3 9l6-0.6L12 3l3 5.4 6 0.6-5.2 5.3L17 20l-5-3z"></path>
-              </svg>
-              推荐清单
-            </a>
-            <a class="nav-chip" href="#topic" data-jump="topic">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M4 6h16"></path>
-                <path d="M4 12h10"></path>
-                <path d="M4 18h16"></path>
-              </svg>
-              专题分组
-            </a>
-          </nav>
-        </div>
-      </div>
+<main>
 
-      <div id="mobileDrawer" class="mobile-drawer" role="region" aria-label="移动端分类导航">
-        <div class="drawer-inner">
-          <div class="drawer-row">
-            <a class="nav-chip active" href="/" aria-current="page">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M3 9l9-7 9 7"></path>
-                <path d="M9 22V12h6v10"></path>
-              </svg>
-              全部入口
-            </a>
-            <a class="nav-chip" href="#hot" data-jump="hot">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 2l1.2 4.2L17.4 7 13.6 9.6 12 14l-1.6-4.4L6.6 7l4.2-.8L12 2z"></path>
-                <path d="M5 22h14"></path>
-              </svg>
-              热门优先
-            </a>
-            <a class="nav-chip" href="#recommended" data-jump="recommended">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 17l-5 3 1.2-5.7L3 9l6-0.6L12 3l3 5.4 6 0.6-5.2 5.3L17 20l-5-3z"></path>
-              </svg>
-              推荐清单
-            </a>
-            <a class="nav-chip" href="#topic" data-jump="topic">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M4 6h16"></path>
-                <path d="M4 12h10"></path>
-                <path d="M4 18h16"></path>
-              </svg>
-              专题分组
-            </a>
-          </div>
-
-          <form id="siteSearchFormMobile" autocomplete="off" style="margin-top:8px;">
-            <div class="search-wrap" style="width:100%; max-width:none;">
-              <div class="search-icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="7"></circle>
-                  <path d="M21 21l-4.3-4.3"></path>
-                </svg>
-              </div>
-              <input id="siteSearchInputMobile" class="search-field" type="search" placeholder="搜索条目：工具、入口、资源清单…" aria-label="搜索条目" />
-              <button class="search-btn" type="submit" aria-label="搜索">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 21l-4.35-4.35"></path>
-                  <circle cx="11" cy="11" r="7"></circle>
-                </svg>
-                搜索
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-
-    </div>
-  </header>
-
-  <section class="hero" aria-label="首屏">
-    <div class="container-x">
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="container">
       <div class="hero-grid">
-        <div class="hero-card">
-          <div class="hero-top">
-            <div class="hero-kicker">
-              <span class="kicker-badge">木质棕系信息聚合</span>
-              <span style="color:var(--muted); font-weight:800;">把“想找的”收拢在同一张卡片地图</span>
-            </div>
-          </div>
-
-          <h1 class="hero-title">木头泛目录：快速定位可用入口，让信息更听话</h1>
-          <p class="hero-sub">
-            木头泛目录把常用资源、效率工具与热点入口做成可扫描的卡片网格：标题清晰、信息密度恰当、状态标签可见，并提供筛选与排序。
-            你能更快从“列表”走到“结果”，不必在碎片里反复来回。
-          </p>
-
+        <div class="hero-main">
+          <span class="pill"><span class="dot" aria-hidden="true"></span>三月到五月 · 每早七点更新花讯</span>
+          <h1>春天到了，把整个季节的活法一次讲清</h1>
+          <p class="hero-lead">花期预报、踏青路线、时令春菜、换季穿搭与过敏防护，这些春天里最具体的小事，都被整理成可以直接照着做的清单。哪天出发、走哪条路、买什么菜、穿几件，一次看明白。</p>
           <div class="hero-actions">
-            <button class="btn-amber" type="button" data-jump="resultPanel" aria-label="打开结果筛选区">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 5v14"></path>
-                <path d="M5 12h14"></path>
-              </svg>
-              进入筛选结果区
-            </button>
-            <button class="btn-ghost" type="button" data-jump="topic" aria-label="查看专题分组">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M4 6h16"></path>
-                <path d="M4 12h16"></path>
-                <path d="M4 18h10"></path>
-              </svg>
-              查看专题分组
-            </button>
+            <a class="btn btn-primary" href="#huaxun">查看本周花讯</a>
+            <a class="btn btn-ghost" href="#luyan">挑一条踏青路线</a>
           </div>
-
-          <div class="hero-stats" aria-label="站点概览数据">
-            <div class="stat">
-              <div class="stat-num">多维入口</div>
-              <div class="stat-label">工具、资源、热点、专题卡片同时可见</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">状态标签</div>
-              <div class="stat-label">可用与推荐信息一眼可判断</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">高密度但不拥挤</div>
-              <div class="stat-label">卡片圆角与分组留白让信息更顺滑</div>
-            </div>
+          <div class="hero-stats">
+            <div class="stat"><b>128</b><span>花期观测点</span></div>
+            <div class="stat"><b>46</b><span>城郊踏青步道</span></div>
+            <div class="stat"><b>62</b><span>时令春菜条目</span></div>
+            <div class="stat"><b>7:00</b><span>每日数据刷新</span></div>
           </div>
         </div>
-
-        <aside class="hero-side" aria-label="今日精选">
-          <div class="side-title">
-            <span>今日精选入口</span>
-            <span class="badge amber">可用优先</span>
-          </div>
-          <p class="side-sub">按“推荐度 + 可用性 + 近期热度”排序，优先展示更值得点开的条目。</p>
-
-          <div class="side-list">
-            <a class="side-item" href="#" onclick="event.preventDefault(); createToast('已打开：效率工具入口（演示）');">
-              <div class="side-icon amber" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 1v22"></path>
-                  <path d="M17 6l-5-5-5 5"></path>
-                  <path d="M7 18l5 5 5-5"></path>
-                </svg>
-              </div>
+        <aside class="hero-side">
+          <h2 class="side-title">今天可以先做这三件事</h2>
+          <p class="side-note">按天气与花期推算，这两天的窗口很短。</p>
+          <ol class="todo-list">
+            <li>
+              <span class="num">01</span>
               <div>
-                <strong>效率工具入口</strong>
-                <span>把常用的计算、排程与写作辅助做成一处清单。</span>
+                <strong>确认近郊中樱是否还开着</strong>
+                <p>盛花期已到尾声，本周内出发最稳妥，再晚就只剩新叶。</p>
               </div>
-            </a>
-
-            <a class="side-item" href="#" onclick="event.preventDefault(); createToast('已打开：热点资源入口（演示）');">
-              <div class="side-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2l2.3 6.8H22l-5.7 4.1 2.2 6.8L12 16.8 5.5 19.7l2.2-6.8L2 8.8h7.7L12 2z"></path>
-                </svg>
-              </div>
+            </li>
+            <li>
+              <span class="num">02</span>
               <div>
-                <strong>热点资源入口</strong>
-                <span>围绕近期需求聚合条目，减少无效跳转。</span>
+                <strong>把春笋和香椿排进今晚的菜单</strong>
+                <p>春笋焯水去涩，香椿先焯再拌，时令也就这三四周。</p>
               </div>
-            </a>
-
-            <a class="side-item" href="#" onclick="event.preventDefault(); createToast('已打开：专题清单（演示）');">
-              <div class="side-icon amber" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 4h16v16H4z"></path>
-                  <path d="M8 8h8"></path>
-                  <path d="M8 12h6"></path>
-                  <path d="M8 16h8"></path>
-                </svg>
-              </div>
+            </li>
+            <li>
+              <span class="num">03</span>
               <div>
-                <strong>专题清单</strong>
-                <span>把相近需求分组，让你更快找到对的那一类。</span>
+                <strong>给衣柜做一次分层替换</strong>
+                <p>早晚温差还在十度上下，薄外套和长袖都别急着收。</p>
               </div>
-            </a>
+            </li>
+          </ol>
+          <div class="side-foot">
+            <span>数据来源：各地公园管理处与花期观测点</span>
+            <span>晴天适宜出行</span>
           </div>
         </aside>
       </div>
     </div>
   </section>
 
-  <main>
-    <div class="container-x">
-
-      <!-- Panel: filters & results -->
-      <section id="resultPanel" class="section" aria-label="筛选与结果">
-        <div class="panel">
-          <div class="panel-head">
-            <strong>筛选入口与结果区</strong>
-            <p class="hint">点击标签可叠加筛选；搜索会即时更新卡片结果。</p>
-          </div>
-          <div class="panel-body">
-            <div class="filters">
-              <div class="filter-left" role="group" aria-label="筛选标签">
-                <button type="button" class="tag" data-filter="hot" aria-pressed="false" title="显示热门优先条目">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M12 2l1.2 4.2L17.4 7 13.6 9.6 12 14l-1.6-4.4L6.6 7l4.2-.8L12 2z"></path>
-                    <path d="M5 22h14"></path>
-                  </svg>
-                  热门优先
-                </button>
-
-                <button type="button" class="tag" data-filter="recommended" aria-pressed="false" title="显示推荐清单条目">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M12 17l-5 3 1.2-5.7L3 9l6-0.6L12 3l3 5.4 6 0.6-5.2 5.3L17 20l-5-3z"></path>
-                  </svg>
-                  推荐清单
-                </button>
-
-                <button type="button" class="tag sage" data-filter="available" aria-pressed="false" title="显示可用优先条目">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M20 6L9 17l-5-5"></path>
-                  </svg>
-                  可用优先
-                </button>
-
-                <button type="button" class="tag" data-filter="cat:工具" aria-pressed="false" title="筛选工具导航">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M14.7 6.3a4 4 0 0 0-5.7 5.7l-4.1 4.1a2 2 0 0 0 2.8 2.8l4.1-4.1a4 4 0 0 0 5.7-5.7z"></path>
-                  </svg>
-                  工具导航
-                </button>
-
-                <button type="button" class="tag" data-filter="cat:资源" aria-pressed="false" title="筛选资源清单">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M21 15V7a2 2 0 0 0-2-2H7"></path>
-                    <path d="M3 9v10a2 2 0 0 0 2 2h16"></path>
-                    <path d="M7 9V5a2 2 0 0 1 2-2h10"></path>
-                  </svg>
-                  资源清单
-                </button>
-              </div>
-
-              <div class="sort-wrap" role="group" aria-label="排序方式">
-                <span class="sort-label">排序</span>
-                <select id="sortSelect" class="select-pill" aria-label="排序">
-                  <option value="relevance" selected>更匹配的结果</option>
-                  <option value="popular">按收藏热度</option>
-                  <option value="recent">按近期热度</option>
-                </select>
-              </div>
-            </div>
-
-            <div id="hot" class="section" style="margin-top:14px;">
-              <div class="section-head">
-                <h2 class="section-title" id="recommended">推荐可点入口</h2>
-                <p class="section-desc">每个条目都配备状态标签与轻量统计，帮助你更快判断是否值得现在打开。</p>
-              </div>
-
-              <div class="grid-3" id="resultGrid" aria-label="入口卡片结果">
-                <!-- Card 1 -->
-                <a class="card-wood" href="#" role="button" aria-label="打开条目：效率工具入口（演示）"
-                   data-category="工具" data-type="入口" data-hot="1" data-recommended="1" data-available="1"
-                   data-views="98" data-favs="164" onclick="event.preventDefault(); createToast('已打开：效率工具入口（演示）');">
-                  <div class="card-inner">
-                    <div class="card-top">
-                      <div style="min-width:0;">
-                        <div class="card-title">效率工具入口</div>
-                        <p class="card-sub">常用计算、排程与写作辅助集合，减少切换成本。</p>
-                      </div>
-                      <div class="card-icon amber" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M12 5v14"></path>
-                          <path d="M5 12h14"></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="card-badges" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:-4px;">
-                      <span class="badge amber">推荐</span>
-                      <span class="badge sage">可用</span>
-                      <span class="badge gray">高频</span>
-                    </div>
-                    <div class="card-meta">
-                      <div class="meta-left">
-                        <div class="meta-line"><span class="dot" aria-hidden="true"></span>近7天热度：高</div>
-                        <div class="meta-line" style="opacity:.98;">收藏：164</div>
-                      </div>
-                      <span class="meta-btn">
-                        打开
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <path d="M7 17L17 7"></path>
-                          <path d="M9 7h8v8"></path>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </a>
-
-                <!-- Card 2 -->
-                <a class="card-wood" href="#" role="button" aria-label="打开条目：学习资料汇总（演示）"
-                   data-category="资源" data-type="清单" data-hot="1" data-recommended="0" data-available="1"
-                   data-views="86" data-favs="112" onclick="event.preventDefault(); createToast('已打开：学习资料汇总（演示）');">
-                  <div class="card-inner">
-                    <div class="card-top">
-                      <div style="min-width:0;">
-                        <div class="card-title">学习资料汇总</div>
-                        <p class="card-sub">按主题聚合的资料清单，适合按阶段补齐知识。</p>
-                      </div>
-                      <div class="card-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20"></path>
-                          <path d="M20 2H7a3 3 0 0 0-3 3v13"></path>
-                          <path d="M8 7h8"></path>
-                          <path d="M8 11h10"></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="card-badges" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:-4px;">
-                      <span class="badge amber">热门</span>
-                      <span class="badge sage">可用</span>
-                      <span class="badge gray">按题整理</span>
-                    </div>
-                    <div class="card-meta">
-                      <div class="meta-left">
-                        <div class="meta-line"><span class="dot" aria-hidden="true"></span>近7天热度：中</div>
-                        <div class="meta-line" style="opacity:.98;">收藏：112</div>
-                      </div>
-                      <span class="meta-btn">
-                        查看
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <path d="M7 17L17 7"></path>
-                          <path d="M9 7h8v8"></path>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </a>
-
-                <!-- Card 3 -->
-                <a class="card-wood" href="#" role="button" aria-label="打开条目：行业常用入口（演示）"
-                   data-category="资源" data-type="入口" data-hot="0" data-recommended="1" data-available="1"
-                   data-views="74" data-favs="138" onclick="event.preventDefault(); createToast('已打开：行业常用入口（演示）');">
-                  <div class="card-inner">
-                    <div class="card-top">
-                      <div style="min-width:0;">
-                        <div class="card-title">行业常用入口</div>
-                        <p class="card-sub">把日常对接与常用查询集中成一处，减少找不到的空转。</p>
-                      </div>
-                      <div class="card-icon amber" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M4 7h16"></path>
-                          <path d="M4 12h16"></path>
-                          <path d="M4 17h10"></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="card-badges" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:-4px;">
-                      <span class="badge amber">推荐</span>
-                      <span class="badge sage">可用</span>
-                      <span class="badge gray">常用型</span>
-                    </div>
-                    <div class="card-meta">
-                      <div class="meta-left">
-                        <div class="meta-line"><span class="dot" aria-hidden="true"></span>近7天热度：中</div>
-                        <div class="meta-line" style="opacity:.98;">收藏：138</div>
-                      </div>
-                      <span class="meta-btn">
-                        打开
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <path d="M7 17L17 7"></path>
-                          <path d="M9 7h8v8"></path>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </a>
-
-                <!-- Card 4 -->
-                <a class="card-wood" href="#" role="button" aria-label="打开条目：快捷工具合集（演示）"
-                   data-category="工具" data-type="合集" data-hot="1" data-recommended="1" data-available="0"
-                   data-views="66" data-favs="89" onclick="event.preventDefault(); createToast('当前为维护中条目（演示）');">
-                  <div class="card-inner">
-                    <div class="card-top">
-                      <div style="min-width:0;">
-                        <div class="card-title">快捷工具合集</div>
-                        <p class="card-sub">把常见工具按用途分组，适合需要时一键定位。</p>
-                      </div>
-                      <div class="card-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M12 2l1.2 4.2L17.4 7 13.6 9.6 12 14l-1.6-4.4L6.6 7l4.2-.8L12 2z"></path>
-                          <path d="M5 22h14"></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="card-badges" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:-4px;">
-                      <span class="badge amber">热门</span>
-                      <span class="badge gray">维护中</span>
-                      <span class="badge gray">分组入口</span>
-                    </div>
-                    <div class="card-meta">
-                      <div class="meta-left">
-                        <div class="meta-line"><span class="dot" aria-hidden="true"></span>近7天热度：中</div>
-                        <div class="meta-line" style="opacity:.98;">收藏：89</div>
-                      </div>
-                      <span class="meta-btn">
-                        查看状态
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <path d="M7 17L17 7"></path>
-                          <path d="M9 7h8v8"></path>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </a>
-
-                <!-- Card 5 -->
-                <a class="card-wood" href="#" role="button" aria-label="打开条目：写作素材库（演示）"
-                   data-category="资源" data-type="资料" data-hot="0" data-recommended="1" data-available="1"
-                   data-views="58" data-favs="131" onclick="event.preventDefault(); createToast('已打开：写作素材库（演示）');">
-                  <div class="card-inner">
-                    <div class="card-top">
-                      <div style="min-width:0;">
-                        <div class="card-title">写作素材库</div>
-                        <p class="card-sub">按表达方向整理的素材与示例，让灵感更快成稿。</p>
-                      </div>
-                      <div class="card-icon amber" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M4 20h4l10.5-10.5a2 2 0 0 0-4-4L4 16v4z"></path>
-                          <path d="M13.5 6.5l4 4"></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="card-badges" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:-4px;">
-                      <span class="badge amber">推荐</span>
-                      <span class="badge sage">可用</span>
-                      <span class="badge gray">素材向</span>
-                    </div>
-                    <div class="card-meta">
-                      <div class="meta-left">
-                        <div class="meta-line"><span class="dot" aria-hidden="true"></span>近7天热度：低</div>
-                        <div class="meta-line" style="opacity:.98;">收藏：131</div>
-                      </div>
-                      <span class="meta-btn">
-                        打开
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <path d="M7 17L17 7"></path>
-                          <path d="M9 7h8v8"></path>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </a>
-
-                <!-- Card 6 -->
-                <a class="card-wood" href="#" role="button" aria-label="打开条目：工具对比速查（演示）"
-                   data-category="工具" data-type="速查" data-hot="0" data-recommended="0" data-available="1"
-                   data-views="62" data-favs="97" onclick="event.preventDefault(); createToast('已打开：工具对比速查（演示）');">
-                  <div class="card-inner">
-                    <div class="card-top">
-                      <div style="min-width:0;">
-                        <div class="card-title">工具对比速查</div>
-                        <p class="card-sub">用更短的信息框架帮助你做快速判断。</p>
-                      </div>
-                      <div class="card-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M10 3H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9"></path>
-                          <path d="M14 3h7v7"></path>
-                          <path d="M21 3l-9 9"></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="card-badges" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:-4px;">
-                      <span class="badge sage">可用</span>
-                      <span class="badge gray">速查</span>
-                    </div>
-                    <div class="card-meta">
-                      <div class="meta-left">
-                        <div class="meta-line"><span class="dot" aria-hidden="true"></span>近7天热度：低</div>
-                        <div class="meta-line" style="opacity:.98;">收藏：97</div>
-                      </div>
-                      <span class="meta-btn">
-                        查看
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <path d="M7 17L17 7"></path>
-                          <path d="M9 7h8v8"></path>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-            </div>
-          </div>
+  <!-- 花期预报 -->
+  <section class="section" id="huaxun">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Bloom Watch</span>
+          <h2 class="section-title">春天到了本周花期速报</h2>
+          <p class="section-desc">同一株树，从含苞到落瓣只有十来天。下面这段进度条显示的是各地观测点汇总后的平均开花阶段，出发前对一眼就不会空跑。</p>
         </div>
-      </section>
+        <a class="section-link" href="#luyan">去看对应的踏青路线</a>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="card-top"><span class="tag tag-petal">中樱</span><span class="pct">85%</span></div>
+          <h3>染井吉野樱</h3>
+          <p class="muted">盛花期末段 · 花瓣开始零星飘落</p>
+          <div class="bar"><i style="width:85%"></i></div>
+          <ul class="mini-list">
+            <li>最佳时段：本周末之前</li>
+            <li>推荐点位：湖畔东岸步道、老校区林荫道</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="tag tag-orange">油菜花</span><span class="pct">72%</span></div>
+          <h3>油菜花田</h3>
+          <p class="muted">大面积开放 · 田埂可近距离穿行</p>
+          <div class="bar warm"><i style="width:72%"></i></div>
+          <ul class="mini-list">
+            <li>最佳时段：上午九点前光线柔和</li>
+            <li>推荐点位：城北河谷、近郊梯田片区</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="tag tag-green">郁金香</span><span class="pct">64%</span></div>
+          <h3>郁金香花境</h3>
+          <p class="muted">成片花境 · 适合半日游与拍照</p>
+          <div class="bar"><i style="width:64%"></i></div>
+          <ul class="mini-list">
+            <li>最佳时段：午后三点后的侧逆光</li>
+            <li>推荐点位：植物园北门花境区</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="tag tag-petal">桃花</span><span class="pct">58%</span></div>
+          <h3>山桃花</h3>
+          <p class="muted">山野间成片绽放 · 花期约一周</p>
+          <div class="bar"><i style="width:58%"></i></div>
+          <ul class="mini-list">
+            <li>最佳时段：连续晴天的第二、三天</li>
+            <li>推荐点位：西山环线、近郊观景台</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="tag tag-grey">玉兰</span><span class="pct">40%</span></div>
+          <h3>白玉兰</h3>
+          <p class="muted">初盛期 · 城市街道两旁最显眼</p>
+          <div class="bar"><i style="width:40%"></i></div>
+          <ul class="mini-list">
+            <li>最佳时段：晴日上午，花瓣舒展</li>
+            <li>推荐点位：老城主干道、机关大院外围</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="tag tag-green">梨花</span><span class="pct">26%</span></div>
+          <h3>梨花</h3>
+          <p class="muted">含苞与初开并存 · 再等一周更好</p>
+          <div class="bar"><i style="width:26%"></i></div>
+          <ul class="mini-list">
+            <li>最佳时段：下周中段</li>
+            <li>推荐点位：南部果园片区</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
 
-      <!-- Category grid entry -->
-      <section id="topic" class="section" aria-label="关键词扩展入口">
-        <div class="section-head">
-          <h2 class="section-title">关键词扩展：把需求分到对的卡片组</h2>
-          <p class="section-desc">你可以从分组入口直接进入更贴合的条目集合。</p>
-        </div>
-
-        <div class="grid-4" aria-label="分类入口卡片">
-          <a class="card-wood" href="#" role="button" onclick="event.preventDefault(); createToast('已打开：工具导航分组（演示）');" data-category="工具" data-type="入口" data-hot="1" data-recommended="1" data-available="1" style="grid-row:auto;">
-            <div class="card-inner">
-              <div class="card-top">
-                <div style="min-width:0;">
-                  <div class="card-title">工具导航</div>
-                  <p class="card-sub">效率工具、常用计算与快捷入口。</p>
-                </div>
-                <div class="card-icon amber" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14.7 6.3a4 4 0 0 0-5.7 5.7l-4.1 4.1a2 2 0 0 0 2.8 2.8l4.1-4.1a4 4 0 0 0 5.7-5.7z"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="card-badges" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:-4px;">
-                <span class="badge amber">高匹配</span>
-                <span class="badge sage">可用</span>
-              </div>
-              <div class="card-meta">
-                <div class="meta-left">
-                  <div class="meta-line"><span class="dot" aria-hidden="true"></span>条目：已整理</div>
-                  <div class="meta-line" style="opacity:.98;">状态清晰</div>
-                </div>
-                <span class="meta-btn">打开</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="card-wood" href="#" role="button" onclick="event.preventDefault(); createToast('已打开：资源清单分组（演示）');" data-category="资源" data-type="清单" data-hot="1" data-recommended="0" data-available="1">
-            <div class="card-inner">
-              <div class="card-top">
-                <div style="min-width:0;">
-                  <div class="card-title">资源清单</div>
-                  <p class="card-sub">学习、模板、资料与可复用条目。</p>
-                </div>
-                <div class="card-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15V7a2 2 0 0 0-2-2H7"></path>
-                    <path d="M3 9v10a2 2 0 0 0 2 2h16"></path>
-                    <path d="M7 9V5a2 2 0 0 1 2-2h10"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="card-badges" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:-4px;">
-                <span class="badge amber">热门</span>
-                <span class="badge sage">可用</span>
-              </div>
-              <div class="card-meta">
-                <div class="meta-left">
-                  <div class="meta-line"><span class="dot" aria-hidden="true"></span>条目：持续更新</div>
-                  <div class="meta-line" style="opacity:.98;">信息更聚焦</div>
-                </div>
-                <span class="meta-btn">打开</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="card-wood" href="#" role="button" onclick="event.preventDefault(); createToast('已打开：热点入口分组（演示）');" data-category="资源" data-type="入口" data-hot="1" data-recommended="1" data-available="1">
-            <div class="card-inner">
-              <div class="card-top">
-                <div style="min-width:0;">
-                  <div class="card-title">热点入口</div>
-                  <p class="card-sub">把近期关注度高的条目集中展示。</p>
-                </div>
-                <div class="card-icon amber" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2l2.3 6.8H22l-5.7 4.1 2.2 6.8L12 16.8 5.5 19.7l2.2-6.8L2 8.8h7.7L12 2z"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="card-badges" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:-4px;">
-                <span class="badge amber">热点</span>
-                <span class="badge sage">可用</span>
-              </div>
-              <div class="card-meta">
-                <div class="meta-left">
-                  <div class="meta-line"><span class="dot" aria-hidden="true"></span>更新节奏清晰</div>
-                  <div class="meta-line" style="opacity:.98;">减少空找</div>
-                </div>
-                <span class="meta-btn">打开</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="card-wood" href="#" role="button" onclick="event.preventDefault(); createToast('已打开：可用优先分组（演示）');" data-category="工具" data-type="集合" data-hot="0" data-recommended="1" data-available="1">
-            <div class="card-inner">
-              <div class="card-top">
-                <div style="min-width:0;">
-                  <div class="card-title">可用优先</div>
-                  <p class="card-sub">把状态明确的条目排到更前面。</p>
-                </div>
-                <div class="card-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 6L9 17l-5-5"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="card-badges" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:-4px;">
-                <span class="badge sage">可用</span>
-                <span class="badge gray">状态优先</span>
-              </div>
-              <div class="card-meta">
-                <div class="meta-left">
-                  <div class="meta-line"><span class="dot" aria-hidden="true"></span>更少无效跳转</div>
-                  <div class="meta-line" style="opacity:.98;">更稳更快</div>
-                </div>
-                <span class="meta-btn">打开</span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <!-- Evidence / Social proof style blocks -->
-      <section class="section" aria-label="信息组织优势">
-        <div class="section-head">
-          <h2 class="section-title">信息更好“扫”，结果更快“到”</h2>
-          <p class="section-desc">木头泛目录的卡片化呈现方式，帮助你把注意力集中在最该看的那一行信息上。</p>
-        </div>
-
-        <div class="grid-3">
-          <div class="card-wood">
-            <div class="card-inner">
-              <div class="card-top">
-                <div style="min-width:0;">
-                  <div class="card-title">状态标签可见</div>
-                  <p class="card-sub">推荐、可用、维护中等状态，让判断不再依赖猜测。</p>
-                </div>
-                <div class="card-icon amber" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2l2.3 6.8H22l-5.7 4.1 2.2 6.8L12 16.8 5.5 19.7l2.2-6.8L2 8.8h7.7L12 2z"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="card-meta">
-                <div class="meta-left">
-                  <div class="meta-line"><span class="dot" aria-hidden="true"></span>减少无效打开</div>
-                  <div class="meta-line" style="opacity:.98;">判断路径更短</div>
-                </div>
-                <span class="meta-btn" aria-hidden="true">一眼可见</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-wood">
-            <div class="card-inner">
-              <div class="card-top">
-                <div style="min-width:0;">
-                  <div class="card-title">标题+副信息</div>
-                  <p class="card-sub">让你快速理解条目适用范围与关键信息。</p>
-                </div>
-                <div class="card-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 6h16"></path>
-                    <path d="M4 12h10"></path>
-                    <path d="M4 18h16"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="card-meta">
-                <div class="meta-left">
-                  <div class="meta-line"><span class="dot" aria-hidden="true"></span>信息密度适中</div>
-                  <div class="meta-line" style="opacity:.98;">读起来更顺</div>
-                </div>
-                <span class="meta-btn" aria-hidden="true">更好扫读</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-wood">
-            <div class="card-inner">
-              <div class="card-top">
-                <div style="min-width:0;">
-                  <div class="card-title">筛选与排序更贴手</div>
-                  <p class="card-sub">热门、推荐、可用优先与排序切换，节奏更快。</p>
-                </div>
-                <div class="card-icon amber" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 6h16"></path>
-                    <path d="M7 12h10"></path>
-                    <path d="M10 18h4"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="card-meta">
-                <div class="meta-left">
-                  <div class="meta-line"><span class="dot" aria-hidden="true"></span>更快找到结果</div>
-                  <div class="meta-line" style="opacity:.98;">减少反复筛找</div>
-                </div>
-                <span class="meta-btn" aria-hidden="true">行动即刻</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Two list cards -->
-      <section class="section" aria-label="精选清单">
-        <div class="section-head">
-          <h2 class="section-title">精选清单：更接近你当下的需求</h2>
-          <p class="section-desc">这些条目按“好用程度与可读性”做了更粗粒度的优先级排序。</p>
-        </div>
-
-        <div class="list-wrap">
-          <div class="list-card" id="recommended">
-            <div class="top">
-              <strong>推荐清单</strong>
-              <span>更适合先点开的那一组</span>
-            </div>
-            <div class="list-body">
-              <div class="row-item">
-                <div class="row-main">
-                  <div class="row-title">对照式资料整理</div>
-                  <p class="row-sub">把同类信息压缩到同一视图，
-    <footer aria-label="站点底部">
-      <div class="container-x">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <div class="brand-mark" aria-hidden="true" style="border-radius:16px;"></div>
-            <div>
-              <div class="footer-title">木头泛目录</div>
-              <p class="footer-desc">
-                把常用信息做成可扫描的卡片入口：状态更清晰、条目更聚焦、查找更省时间。适合你日常与工作中反复用到的工具、资源与热点。
-              </p>
-              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
-                <span class="badge amber">铜金高亮</span>
-                <span class="badge sage">可用优先</span>
-                <span class="badge gray">卡片聚合</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="footer-col">
-            <h4>栏目入口</h4>
-            <div class="footer-links">
-              <a class="footer-link" href="#resultPanel" aria-label="跳转到筛选与结果区">
-                <span style="font-weight:950;">筛选与结果区</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M7 17L17 7"></path>
-                  <path d="M9 7h8v8"></path>
-                </svg>
-              </a>
-              <a class="footer-link" href="#topic" aria-label="跳转到专题分组入口">
-                <span style="font-weight:950;">专题分组</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M7 17L17 7"></path>
-                  <path d="M9 7h8v8"></path>
-                </svg>
-              </a>
-              <a class="footer-link" href="#faq" aria-label="跳转到常见问题">
-                <span style="font-weight:950;">常见问题</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M7 17L17 7"></path>
-                  <path d="M9 7h8v8"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <div class="footer-col" aria-label="快速联系">
-            <h4>快速沟通</h4>
-            <div class="footer-links">
-              <a class="footer-link" href="#" onclick="event.preventDefault(); createToast('已记录你的反馈请求（演示）。');" aria-label="提交反馈">
-                <span style="font-weight:950;">提交反馈</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M20 21V8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v13"></path>
-                  <path d="M22 21H2"></path>
-                  <path d="M7 9h10"></path>
-                  <path d="M7 13h6"></path>
-                </svg>
-              </a>
-              <a class="footer-link" href="#" onclick="event.preventDefault(); createToast('已收藏“木头泛目录”（演示）。');" aria-label="收藏站点">
-                <span style="font-weight:950;">收藏本页</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <span>© 2026 木头泛目录。保留所有权利。</span>
-          <span>页面信息以实际可用性为准；演示操作不代表真实跳转。</span>
+  <!-- 踏青路线 -->
+  <section class="section tight" id="luyan">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Field Routes</span>
+          <h2 class="section-title">春天到了周末踏青路线</h2>
+          <p class="section-desc">按体力、同行人和出行时长挑，每条都写清路况、补给点和返程时间，不需要再自己拼路线。</p>
         </div>
       </div>
-    </footer>
+      <div class="grid grid-3">
+        <article class="card route-card">
+          <div class="route-meta">
+            <span class="tag tag-green">轻松</span>
+            <span class="tag tag-grey">半日</span>
+          </div>
+          <h3>湖畔环湖缓坡道</h3>
+          <p class="muted">全程平缓无台阶，沿途有三处观景平台，适合带老人和推车出行。中樱集中在东岸，落瓣铺在木栈道两侧。</p>
+          <div class="route-facts">
+            <span>全程 <b>4.2 公里</b></span>
+            <span>用时 <b>1.5 小时</b></span>
+            <span>补给 <b>2 处</b></span>
+          </div>
+        </article>
+        <article class="card route-card">
+          <div class="route-meta">
+            <span class="tag tag-orange">亲子</span>
+            <span class="tag tag-grey">全日</span>
+          </div>
+          <h3>河谷油菜花田小环线</h3>
+          <p class="muted">田埂宽阔，中途有草地可供野餐。孩子在田边观察蜂群和灌溉渠，回程顺路逛乡村市集，能买到现挖的春笋。</p>
+          <div class="route-facts">
+            <span>全程 <b>6.8 公里</b></span>
+            <span>用时 <b>4 小时</b></span>
+            <span>补给 <b>3 处</b></span>
+          </div>
+        </article>
+        <article class="card route-card">
+          <div class="route-meta">
+            <span class="tag tag-petal">进阶</span>
+            <span class="tag tag-grey">全日</span>
+          </div>
+          <h3>西山山桃观景环线</h3>
+          <p class="muted">有两段连续爬升，雨后石阶偏滑。登顶可俯瞰整片山谷的粉色花海，下山经溪谷返程，一路有树荫遮挡。</p>
+          <div class="route-facts">
+            <span>全程 <b>11.5 公里</b></span>
+            <span>用时 <b>6 小时</b></span>
+            <span>补给 <b>1 处</b></span>
+          </div>
+        </article>
+        <article class="card route-card">
+          <div class="route-meta">
+            <span class="tag tag-green">通勤顺路</span>
+            <span class="tag tag-grey">两小时</span>
+          </div>
+          <h3>老城玉兰citywalk</h3>
+          <p class="muted">从地铁站出来沿主街步行，玉兰和海棠夹在旧建筑之间。傍晚灯光亮起后，白花瓣会映出暖色轮廓。</p>
+          <div class="route-facts">
+            <span>全程 <b>3.0 公里</b></span>
+            <span>用时 <b>2 小时</b></span>
+            <span>补给 <b>密集</b></span>
+          </div>
+        </article>
+        <article class="card route-card">
+          <div class="route-meta">
+            <span class="tag tag-orange">骑行</span>
+            <span class="tag tag-grey">半日</span>
+          </div>
+          <h3>沿江绿道骑行段</h3>
+          <p class="muted">全程柏油路面，坡度只有两处短缓坡。江风偏大，起风时注意控制车速，沿途驿站可补水并租借共享单车。</p>
+          <div class="route-facts">
+            <span>全程 <b>22 公里</b></span>
+            <span>用时 <b>3 小时</b></span>
+            <span>补给 <b>4 处</b></span>
+          </div>
+        </article>
+        <article class="card route-card">
+          <div class="route-meta">
+            <span class="tag tag-petal">安静</span>
+            <span class="tag tag-grey">半日</span>
+          </div>
+          <h3>植物园冷门赏花段</h3>
+          <p class="muted">避开主入口人流，从西门进入的次干道两侧种着郁金香与风信子，香气浓，适合不想挤在人堆里的半日闲逛。</p>
+          <div class="route-facts">
+            <span>全程 <b>2.4 公里</b></span>
+            <span>用时 <b>2 小时</b></span>
+            <span>补给 <b>1 处</b></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-  <section class="section pg-extra" id="pg-data"><div class="wrap"><h2>木头泛目录 一览</h2><p class="pg-lead">用几组直观数字把「木头泛目录」的内容规模和更新节奏摊开，避免首页只有一句空话。</p><div class="pg-stats stat-row"><div class="stat slash-1"><span class="num">1280+</span><p>主题相关条目</p></div><div class="stat slash-2"><span class="num">98%</span><p>栏目对题率</p></div><div class="stat slash-3"><span class="num">24h</span><p>新鲜内容刷新</p></div><div class="stat"><span class="num">4步</span><p>从打开到看完</p></div></div></div></section>
-<section class="section pg-extra" id="pg-picks"><div class="wrap"><h2>木头泛目录 精选栏目</h2><p class="pg-lead">围绕「木头泛目录」整理的栏目与更新看点，方便快速找到想看的内容。</p><div class="pg-chips"><span>今日更新</span><span>热门推荐</span><span>完整目录</span><span>收藏提醒</span></div><div class="grid-3 pg-grid"><article class="card pg-card"><h3>新鲜上架</h3><p>按「木头泛目录」聚合最新条目，标题、简介和更新时间一次看清，少翻无效页。</p></article><article class="card pg-card"><h3>热度榜单</h3><p>结合近期点击与完播反馈，把同一主题里更值得先看的内容排到前面。</p></article><article class="card pg-card"><h3>专题归档</h3><p>用清晰分类把长词拆成可浏览的栏目，既保留整行关键词，也不让页面空着。</p></article></div></div></section>
-<section class="section pg-extra" id="pg-flow"><div class="wrap"><h2>使用流程</h2><p class="pg-lead">从打开页面到找到「木头泛目录」相关内容，四步就能走完。</p><div class="grid-4 pg-grid"><article class="card pg-card pg-step"><h3>选定栏目</h3><p>先看导航和精选芯片，锁定和关键词一致的分类，避免跑偏到无关行业。</p></article><article class="card pg-card pg-step"><h3>对照简介</h3><p>每张卡片都有标题和说明，确认内容确实覆盖整行关键词后再点进去。</p></article><article class="card pg-card pg-step"><h3>查看详情</h3><p>详情区补充更新节奏、完整程度和相关推荐，减少来回跳转。</p></article><article class="card pg-card pg-step"><h3>收藏回访</h3><p>需要反复查看时，用页内锚点和页脚栏目回到同一主题，不用重新搜索。</p></article></div></div></section>
-<section class="section pg-extra dark-band" id="pg-voice"><div class="wrap"><h2>用户怎么说</h2><p class="pg-lead">真实使用反馈，重点看有没有把「木头泛目录」讲清楚。</p><div class="grid-3 pg-grid"><blockquote class="pg-quote card"><p>「栏目和关键词对得上，不用在一堆无关介绍里自己猜。」</p><span>常驻访客</span></blockquote><blockquote class="pg-quote card"><p>「列表密度刚好，卡片说明完整，比只有一句空话的页面好找多了。」</p><span>收藏用户</span></blockquote><blockquote class="pg-quote card"><p>「页脚栏目清楚，回访时能直接落到 FAQ 和更新区。」</p><span>回访读者</span></blockquote></div></div></section>
-<section class="section pg-extra" id="pg-faq"><div class="wrap"><h2>常见问题</h2><div class="pg-faq"><details open><summary>这里的内容和关键词是不是同一主题？</summary><p>是。页面按整行「木头泛目录」组织栏目、标题和说明，不会改写成套装行业官网。</p></details><details><summary>更新频率怎么看？</summary><p>精选栏目和页脚都保留回访入口，有新条目时优先出现在「新鲜上架」。</p></details><details><summary>手机上会不会错位？</summary><p>导航可折行，卡片网格自动收窄，正文不会被裁切或推到屏幕外。</p></details></div></div></section>
-<section class="section pg-extra" id="pg-cta"><div class="wrap"><div class="pg-cta"><h2>继续浏览 木头泛目录</h2><p>如果这份目录对上了你要找的「木头泛目录」，可以直接从栏目、榜单或页脚回到对应板块。</p><a class="btn btn-solid" href="#pg-picks">查看精选栏目</a><p class="pg-lead">mtfml.pages.dev</p></div></div></section>
+  <!-- 时令春菜 -->
+  <section class="section" id="chuncai">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Spring Table</span>
+          <h2 class="section-title">这一周值得买的春菜</h2>
+          <p class="section-desc">时令食材的窗口都短，过了这段时间口感会明显变差。下面按上市阶段和常见做法整理，逛市集时对着挑就行。</p>
+        </div>
+      </div>
+      <div class="food-rows">
+        <div class="food-row">
+          <div class="food-name"><span class="food-dot" aria-hidden="true"></span>春笋</div>
+          <div class="food-when">正当季 · 约 3 周</div>
+          <div class="food-how">笋尖适合清炒，笋中段切滚刀与咸肉同炖，底部老根削净后切丝做汤底。</div>
+          <span class="tag tag-green">挑笋壳紧实的</span>
+        </div>
+        <div class="food-row">
+          <div class="food-name"><span class="food-dot" aria-hidden="true"></span>香椿</div>
+          <div class="food-when">头茬最嫩 · 约 2 周</div>
+          <div class="food-how">焯水至变色再切碎，与鸡蛋同炒或拌豆腐，焯水时间不少于三十秒。</div>
+          <span class="tag tag-orange">选紫红嫩芽</span>
+        </div>
+        <div class="food-row">
+          <div class="food-name"><span class="food-dot" aria-hidden="true"></span>荠菜</div>
+          <div class="food-when">田边正盛 · 约 4 周</div>
+          <div class="food-how">剁碎后包馄饨或做春卷馅，与其他绿叶菜同炒时最后下锅。</div>
+          <span class="tag tag-green">选叶片贴地的</span>
+        </div>
+        <div class="food-row">
+          <div class="food-name"><span class="food-dot" aria-hidden="true"></span>蚕豆</div>
+          <div class="food-when">嫩荚刚上市 · 约 3 周</div>
+          <div class="food-how">剥荚后与雪菜同炒，或整粒焖饭；老豆适合煮汤，口感更绵。</div>
+          <span class="tag tag-orange">选豆荚饱满</span>
+        </div>
+        <div class="food-row">
+          <div class="food-name"><span class="food-dot" aria-hidden="true"></span>豌豆尖</div>
+          <div class="food-when">嫩梢期 · 约 3 周</div>
+          <div class="food-how">大火快炒十几秒即可出锅，也可在汤面起锅前最后放入。</div>
+          <span class="tag tag-green">选叶片未展开的</span>
+        </div>
+        <div class="food-row">
+          <div class="food-name"><span class="food-dot" aria-hidden="true"></span>马兰头</div>
+          <div class="food-when">野生上市期 · 约 2 周</div>
+          <div class="food-how">焯水后切末拌香干，加少量麻油与细盐，凉拌最能保留清香。</div>
+          <span class="tag tag-grey">选茎细叶小的</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 换季穿搭 -->
+  <section class="section tight" id="chuanda">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Layer Guide</span>
+          <h2 class="section-title">早晚温差里的穿搭分层</h2>
+          <p class="section-desc">春天的气温最容易出错：白天接近二十度，早晚仍可能跌到十度以下。按体感温度分三档准备，比按日期准备更靠谱。</p>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <article class="card temp-card">
+          <span class="temp-badge">8–13°C · 微凉</span>
+          <h3 style="margin-top:14px;">早春出行</h3>
+          <p class="muted">阴天与清晨体感偏低，重点在阻挡穿堂风。</p>
+          <ul class="layer-list">
+            <li><span>内</span>薄羊毛针织或长袖打底</li>
+            <li><span>中</span>衬衫或薄绒卫衣</li>
+            <li><span>外</span>风衣、轻量夹克、短款呢料</li>
+          </ul>
+        </article>
+        <article class="card temp-card">
+          <span class="temp-badge" style="background:#e7f3ec;color:#1f5b42;">13–19°C · 舒适</span>
+          <h3 style="margin-top:14px;">白天主体时段</h3>
+          <p class="muted">最宜出行的一档，单层加一件可收纳的外套即可。</p>
+          <ul class="layer-list">
+            <li><span>内</span>纯棉长袖或薄针织</li>
+            <li><span>中</span>不需要</li>
+            <li><span>外</span>可折叠薄外套，进室内随手收</li>
+          </ul>
+        </article>
+        <article class="card temp-card">
+          <span class="temp-badge" style="background:#fcf0e2;color:#a3601f;">19–25°C · 偏暖</span>
+          <h3 style="margin-top:14px;">午后与晴天</h3>
+          <p class="muted">树荫与阳光下差别大，重点在透气和防晒。</p>
+          <ul class="layer-list">
+            <li><span>内</span>短袖或亚麻衬衫</li>
+            <li><span>中</span>不需要</li>
+            <li><span>外</span>防晒衣、轻薄开衫</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 绿地速查 -->
+  <section class="section" id="lvdi">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Green Directory</span>
+          <h2 class="section-title">春天到了城市绿地开放速查</h2>
+          <p class="section-desc">赏花最怕到了门口才发现限流或闭园。以下信息来自各公园管理处当日公告，出行前建议再确认一次。</p>
+        </div>
+      </div>
+      <div class="table-card">
+        <div class="table-head">
+          <span>绿地名称</span>
+          <span>区域</span>
+          <span>开放时间</span>
+          <span>当前看点</span>
+        </div>
+        <div class="table-row">
+          <span><strong>湖滨公园东岸</strong></span>
+          <span class="dim">城中片区</span>
+          <span>06:00 – 21:00</span>
+          <span>中樱盛花尾段，木栈道两侧落瓣明显</span>
+        </div>
+        <div class="table-row">
+          <span><strong>河谷农业观光带</strong></span>
+          <span class="dim">城北片区</span>
+          <span>全天开放</span>
+          <span>油菜花大面积开放，田埂可行走</span>
+        </div>
+        <div class="table-row">
+          <span><strong>植物园北门花境区</strong></span>
+          <span class="dim">城西片区</span>
+          <span>07:30 – 18:00</span>
+          <span>郁金香与风信子成片，香气浓</span>
+        </div>
+        <div class="table-row">
+          <span><strong>西山森林公园</strong></span>
+          <span class="dim">城郊西北</span>
+          <span>06:30 – 17:30</span>
+          <span>山桃花开遍山谷，观景台视野开阔</span>
+        </div>
+        <div class="table-row">
+          <span><strong>老城玉兰大道</strong></span>
+          <span class="dim">老城片区</span>
+          <span>全天开放</span>
+          <span>白玉兰初盛，夜间有路灯照明</span>
+        </div>
+        <div class="table-row">
+          <span><strong>南部果园观花区</strong></span>
+          <span class="dim">城南片区</span>
+          <span>08:00 – 18:00</span>
+          <span>梨花含苞待放，预计下周进入初盛</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 春日健康 -->
+  <section class="section tight" id="jiankang">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Wellness</span>
+          <h2 class="section-title">春天里的身体小状况</h2>
+          <p class="section-desc">花粉、湿度、日照时长的变化都会影响状态。把常见问题的应对方式提前备好，出门会更从容。</p>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <article class="card info-block">
+          <h3><span class="icon-dot" aria-hidden="true">1</span>花粉高峰的应对</h3>
+          <p class="muted">晴朗有风的上午十点到下午四点，空气中花粉浓度最高。</p>
+          <ul class="check-list">
+            <li>外出佩戴贴合度较好的口罩</li>
+            <li>回家后先换外衣，再清洗面部</li>
+            <li>晾晒衣物避开大风时段</li>
+            <li>室内使用带过滤网的新风或空气净化设备</li>
+          </ul>
+        </article>
+        <article class="card info-block">
+          <h3><span class="icon-dot" aria-hidden="true">2</span>作息与日照调整</h3>
+          <p class="muted">白昼明显变长，入睡时间容易被动推迟。</p>
+          <ul class="check-list">
+            <li>固定起床时间，比强制早睡更有效</li>
+            <li>上午接触自然光二十分钟以上</li>
+            <li>午后减少浓茶与咖啡的摄入</li>
+            <li>睡前把卧室内温度调低一到两度</li>
+          </ul>
+        </article>
+        <article class="card info-block">
+          <h3><span class="icon-dot" aria-hidden="true">3</span>恢复运动节奏</h3>
+          <p class="muted">天气转暖后运动量容易一次加太多。</p>
+          <ul class="check-list">
+            <li>前两周以快走和慢骑为主</li>
+            <li>每次运动前留足十分钟热身</li>
+            <li>户外运动避开清晨露水未干的草地</li>
+            <li>出汗后及时换上干爽衣物</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 亲子春游 -->
+  <section class="section" id="qinzi">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Family Day</span>
+          <h2 class="section-title">带孩子出门的一天怎么排</h2>
+          <p class="section-desc">从出发到返程的节奏按孩子的体力来安排，中间留出足够的自由活动和休息时间。</p>
+        </div>
+      </div>
+      <div class="grid grid-2">
+        <article class="card">
+          <div class="card-top"><span class="tag tag-green">上午</span><span class="pct">08:30 出发</span></div>
+          <h3>田埂与草地上的观察</h3>
+          <p class="muted">带一支放大镜和一本小本子，看蜜蜂在油菜花间停留、看灌溉渠里的水草。这一时段光线柔和，孩子也不容易烦躁。</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="tag tag-orange">中午</span><span class="pct">11:30 休整</span></div>
+          <h3>草地上的一顿简单野餐</h3>
+          <p class="muted">准备易携带、不易变质的食物，用保温壶装温水。铺一张防潮垫，让孩子有半小时躺下来的时间。</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="tag tag-petal">下午</span><span class="pct">14:00 活动</span></div>
+          <h3>手作与自然收集</h3>
+          <p class="muted">捡拾地上的落瓣和新叶，回家压进书本做成标本。提醒孩子只捡落花，不摘枝头的花苞。</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="tag tag-grey">返程</span><span class="pct">16:30 收尾</span></div>
+          <h3>顺路逛一次市集</h3>
+          <p class="muted">在乡村市集买些当天的春笋或草莓，返程路上孩子通常很快就睡着，到家正好整理照片。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 春日摄影 -->
+  <section class="section tight" id="sheying">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Light & Shot</span>
+          <h2 class="section-title">春日拍摄的时间段</h2>
+          <p class="section-desc">花期里最影响成片质量的不是设备，而是光线落在花瓣上的角度。</p>
+        </div>
+      </div>
+      <div class="shot-timeline">
+        <div class="shot-item">
+          <span class="shot-time">06:30 – 08:00</span>
+          <h4>晨雾与露水</h4>
+          <p>花瓣带水珠，逆光下边缘透亮。适合近距离特写，注意不要踩进花圃。</p>
+        </div>
+        <div class="shot-item">
+          <span class="shot-time">16:30 – 18:00</span>
+          <h4>侧逆光时段</h4>
+          <p>光线角度低，花瓣纤维的纹理最清晰，拍成片花海层次也最丰富。</p>
+        </div>
+        <div class="shot-item">
+          <span class="shot-time">阴天全天</span>
+          <h4>散光下的细节</h4>
+          <p>没有强阴影，颜色还原准确，最适合拍花枝结构和小景组合。</p>
+        </div>
+        <div class="shot-item">
+          <span class="shot-time">19:00 之后</span>
+          <h4>夜灯与白花</h4>
+          <p>路灯下的玉兰会泛暖色，用较高快门避免手抖，画面干净通透。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 居家焕新 -->
+  <section class="section" id="jujia">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Home Reset</span>
+          <h2 class="section-title">换季时给家里做三件事</h2>
+          <p class="section-desc">温度回升后，室内环境的重点从保暖转向通风、去湿和除尘。</p>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <article class="card info-block">
+          <h3><span class="icon-dot" aria-hidden="true">A</span>衣物分层收纳</h3>
+          <p class="muted">冬季厚重衣物清洗后真空收纳，薄款按常穿频率放在最外层。</p>
+          <ul class="check-list">
+            <li>羽绒类清洗后彻底晾干再收</li>
+            <li>羊毛制品折叠存放，避免悬挂变形</li>
+            <li>留出两件外套应对倒春寒</li>
+          </ul>
+        </article>
+        <article class="card info-block">
+          <h3><span class="icon-dot" aria-hidden="true">B</span>通风与除湿</h3>
+          <p class="muted">湿度升高后，墙体与家具背面容易返潮。</p>
+          <ul class="check-list">
+            <li>选午后湿度低时开窗二十到三十分钟</li>
+            <li>衣柜内放置可重复使用的除湿盒</li>
+            <li>床垫定期立起通风</li>
+          </ul>
+        </article>
+        <article class="card info-block">
+          <h3><span class="icon-dot" aria-hidden="true">C</span>阳台春播</h3>
+          <p class="muted">三月下旬到四月上旬，多数香草与叶菜的播种窗口都在这个区间。</p>
+          <ul class="check-list">
+            <li>薄荷、罗勒、小葱适合新手</li>
+            <li>播种后覆盖薄土并保持湿润</li>
+            <li>出苗后逐步增加日照时长</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 读者反馈 -->
+  <section class="section tight" id="gushi">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Notes</span>
+          <h2 class="section-title">春天到了去过的人怎么说</h2>
+          <p class="section-desc">这些留言来自近两周按花期表出行的读者，路线与时间点都值得参考。</p>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <article class="card quote-card">
+          <p class="quote-text">按花讯表把出发时间提前到周六早上，湖东岸人很少，落瓣铺了一地，比去年挤在中午去好太多。</p>
+          <div class="quote-user">
+            <span class="avatar" aria-hidden="true">林</span>
+            <div><b>林女士</b><span>城中片区 · 半日游</span></div>
+          </div>
+        </article>
+        <article class="card quote-card">
+          <p class="quote-text">河谷那条环线确实适合带孩子，中途草地平坦。市集上现挖的春笋很新鲜，回来当晚就炖了。</p>
+          <div class="quote-user">
+            <span class="avatar" aria-hidden="true">周</span>
+            <div><b>周先生</b><span>城北片区 · 亲子出行</span></div>
+          </div>
+        </article>
+        <article class="card quote-card">
+          <p class="quote-text">西山环线后段石阶雨后真的滑，按提示穿了防滑鞋。山顶那片山桃值得爬，俯瞰整条山谷都是粉的。</p>
+          <div class="quote-user">
+            <span class="avatar" aria-hidden="true">许</span>
+            <div><b>许同学</b><span>城郊西北 · 全日徒步</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="wenda">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Questions</span>
+          <h2 class="section-title">关于春天出行的常见问题</h2>
+        </div>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>花期预报的准确度大概如何？</summary>
+          <div class="faq-body">
+            花期受连续气温与风力影响明显，我们的进度数据来自各观测点每天上传的开花状态，误差通常在两天以内。遇到大风或降温，进度条会同步回调，出发前一天再确认一次最稳妥。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>雨天还值得去赏花吗？</summary>
+          <div class="faq-body">
+            细雨里的花瓣更通透，人也少。但需要避开泥土路段和石阶，选铺装路面为主的公园步道更安全。雨后两小时内的花况往往最好，花瓣干净且没有浮尘。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>同一条路线适合带长辈一起走吗？</summary>
+          <div class="faq-body">
+            湖畔环湖道和老城步行段都是全程平路，沿途有座椅和卫生间，更适合长辈。西山环线有两段连续爬升，建议按体力谨慎选择，或者只走前半段折返。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>春菜买回家能放几天？</summary>
+          <div class="faq-body">
+            春笋建议当天处理，焯水后冷藏可放两到三天；香椿焯水后挤干水分冷冻，能保存更久；荠菜和豌豆尖最好当天吃完，存放一夜后香气会明显下降。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>过敏体质怎么安排赏花行程？</summary>
+          <div class="faq-body">
+            优先选择雨后或清晨出行，避开有风的晴天正午；以水面和常绿林区域为主，减少在花海密集区长时间停留。回家后立刻更换外衣并用清水清洗面部，能明显减轻不适。
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 订阅 -->
+  <section class="section tight" id="dingyue">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>每周一封春日周报，把花期和菜价一起送到</h2>
+          <p>周报里包含当周开花进度、值得走的路线、市集上正在上市的春菜和未来七天的天气提醒。内容不多，读五分钟足够安排一个周末。</p>
+        </div>
+        <form class="cta-form" onsubmit="return false;">
+          <div class="field">
+            <input type="email" name="email" placeholder="填一个常用邮箱" aria-label="邮箱地址" required>
+            <button class="btn btn-white" type="submit">订阅周报</button>
+          </div>
+          <span class="cta-hint">每周四下午发送，随时可以退订。</span>
+        </form>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-  <script>
-    (function(){
-      const faq = document.getElementById('faq');
-      if(!faq) return;
-      const acc = faq.querySelector('.accordion');
-      if(acc){
-        acc.addEventListener('shown.bs.collapse', function(){
-          // no-op：只为增强交互一致性
-        });
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">春</span>
+        <span class="brand-text">
+          <span class="brand-name">春天到了</span>
+          <span class="brand-sub">Spring Field Notes</span>
+        </span>
+      </div>
+      <p class="footer-desc">记录从三月到五月的花期、路线、食材与生活细节，把每一个还能出门的晴天都用上。</p>
+    </div>
+    <div class="footer-col">
+      <h4>季节内容</h4>
+      <ul>
+        <li><a href="#huaxun">花期速报</a></li>
+        <li><a href="#luyan">踏青路线</a></li>
+        <li><a href="#chuncai">时令春菜</a></li>
+        <li><a href="#lvdi">绿地速查</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>生活指南</h4>
+      <ul>
+        <li><a href="#chuanda">换季穿搭</a></li>
+        <li><a href="#jiankang">身体小状况</a></li>
+        <li><a href="#jujia">居家焕新</a></li>
+        <li><a href="#sheying">春日拍摄</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>关于本站</h4>
+      <ul>
+        <li><a href="#qinzi">亲子出行</a></li>
+        <li><a href="#gushi">读者留言</a></li>
+        <li><a href="#wenda">常见问答</a></li>
+        <li><a href="#dingyue">订阅周报</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 春天到了 · ctdl.pages.dev</span>
+    <div class="fb-links">
+      <a href="/">首页</a>
+      <a href="#huaxun">花期预报</a>
+      <a href="#wenda">常见问答</a>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://ctdl.pages.dev/#website",
+      "name": "春天到了",
+      "url": "https://ctdl.pages.dev/",
+      "inLanguage": "zh-CN",
+      "description": "春天到了，每日更新花期预报与赏花点位，整理城郊踏青路线、公园绿地开放时间、时令春菜清单以及换季穿搭、过敏防护、居家收纳与春日摄影指南。"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://ctdl.pages.dev/#webpage",
+      "url": "https://ctdl.pages.dev/",
+      "name": "春天到了｜花期预报·踏青路线·时令春菜与换季指南",
+      "isPartOf": { "@id": "https://ctdl.pages.dev/#website" },
+      "inLanguage": "zh-CN",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://ctdl.pages.dev/" },
+          { "@type": "ListItem", "position": 2, "name": "季节花讯", "item": "https://ctdl.pages.dev/#huaxun" },
+          { "@type": "ListItem", "position": 3, "name": "春天到了", "item": "https://ctdl.pages.dev/" }
+        ]
       }
-    })();
-  </script>
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://ctdl.pages.dev/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "花期预报的准确度大概如何？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "花期受连续气温与风力影响明显，进度数据来自各观测点每天上传的开花状态，误差通常在两天以内。遇到大风或降温，进度会同步回调，出发前一天再确认一次最稳妥。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "雨天还值得去赏花吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "细雨里的花瓣更通透，人也少。但需要避开泥土路段和石阶，选择铺装路面为主的公园步道更安全。雨后两小时内的花况往往最好，花瓣干净且没有浮尘。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "同一条路线适合带长辈一起走吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "湖畔环湖道和老城步行段都是全程平路，沿途有座椅和卫生间，更适合长辈。西山环线有两段连续爬升，建议按体力谨慎选择，或者只走前半段折返。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "春菜买回家能放几天？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "春笋建议当天处理，焯水后冷藏可放两到三天；香椿焯水后挤干水分冷冻，能保存更久；荠菜和豌豆尖最好当天吃完，存放一夜后香气会明显下降。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "过敏体质怎么安排赏花行程？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "优先选择雨后或清晨出行，避开有风的晴天正午；以水面和常绿林区域为主，减少在花海密集区长时间停留。回家后立刻更换外衣并用清水清洗面部，能明显减轻不适。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="assets/vendor/foundation/js/foundation.min.js"></script>
+</body>
+</html
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">春</span>
+        <span class="brand-text">
+          <span class="brand-name">春天到了</span>
+          <span class="brand-sub">Spring Field Notes</span>
+        </span>
+      </div>
+      <p class="footer-desc">记录从三月到五月的花期、路线、食材与生活细节，把每一个还能出门的晴天都用上。数据每日汇总自各地观测点与公园公告，出行前再看一眼，心里更有底。</p>
+    </div>
+    <div class="footer-col">
+      <h4>季节内容</h4>
+      <ul>
+        <li><a href="#huaxun">花期速报</a></li>
+        <li><a href="#luyan">踏青路线</a></li>
+        <li><a href="#chuncai">时令春菜</a></li>
+        <li><a href="#lvdi">绿地速查</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>生活指南</h4>
+      <ul>
+        <li><a href="#chuanda">换季穿搭</a></li>
+        <li><a href="#jiankang">身体小状况</a></li>
+        <li><a href="#sheying">春日拍摄</a></li>
+        <li><a href="#jujia">居家焕新</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>关于本站</h4>
+      <ul>
+        <li><a href="#qinzi">亲子出行</a></li>
+        <li><a href="#gushi">读者留言</a></li>
+        <li><a href="#wenda">常见问答</a></li>
+        <li><a href="#dingyue">订阅周报</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 春天到了 · ctdl.pages.dev</span>
+    <div class="fb-links">
+      <a href="/">首页</a>
+      <a href="#huaxun">花期预报</a>
+      <a href="#wenda">常见问答</a>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://ctdl.pages.dev/#website",
+      "name": "春天到了",
+      "url": "https://ctdl.pages.dev/",
+      "inLanguage": "zh-CN",
+      "description": "春天到了，每日更新花期预报与赏花点位，整理城郊踏青路线、公园绿地开放时间、时令春菜清单以及换季穿搭、过敏防护、居家收纳与春日摄影指南。"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://ctdl.pages.dev/#webpage",
+      "url": "https://ctdl.pages.dev/",
+      "name": "春天到了｜花期预报·踏青路线·时令春菜与换季指南",
+      "isPartOf": { "@id": "https://ctdl.pages.dev/#website" },
+      "inLanguage": "zh-CN",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://ctdl.pages.dev/" },
+          { "@type": "ListItem", "position": 2, "name": "季节花讯", "item": "https://ctdl.pages.dev/#huaxun" },
+          { "@type": "ListItem", "position": 3, "name": "春天到了", "item": "https://ctdl.pages.dev/" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://ctdl.pages.dev/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "花期预报的准确度大概如何？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "花期受连续气温与风力影响明显，进度数据来自各观测点每天上传的开花状态，误差通常在两天以内。遇到大风或降温，进度会同步回调，出发前一天再确认一次最稳妥。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "雨天还值得去赏花吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "细雨里的花瓣更通透，人也少。但需要避开泥土路段和石阶，选择铺装路面为主的公园步道更安全。雨后两小时内的花况往往最好，花瓣干净且没有浮尘。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "同一条路线适合带长辈一起走吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "湖畔环湖道和老城步行段都是全程平路，沿途有座椅和卫生间，更适合长辈。西山环线有两段连续爬升，建议按体力谨慎选择，或者只走前半段折返。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "春菜买回家能放几天？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "春笋建议当天处理，焯水后冷藏可放两到三天；香椿焯水后挤干水分冷冻，能保存更久；荠菜和豌豆尖最好当天吃完，存放一夜后香气会明显下降。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "过敏体质怎么安排赏花行程？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "优先选择雨后或清晨出行，避开有风的晴天正午；以水面和常绿林区域为主，减少在花海密集区长时间停留。回家后立刻更换外衣并用清水清洗面部，能明显减轻不适。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="assets/vendor/foundation/js/foundation.min.js"></script>
 </body>
 </html>
