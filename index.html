@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b3b35" />
+  <title>木头泛程序：可控的程序生成与部署面板，稳定生成、快速迭代</title>
+  <meta name="keywords" content="木头泛程序,程序生成,代码生成,部署面板,模型调用,任务编排,可控输出,实时状态">
+  <meta name="description" content="木头泛程序是一套偏工程化的程序生成与部署面板，围绕任务编排、模型调用与可验证反馈进行设计。你可以在同一界面里管理生成记录、查看运行耗时与失败原因、切换不同模型并对输出进行替换与重试。">
+  <link rel="canonical" href="https://mtfcx.pages.dev/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="木头泛程序：可控的程序生成与部署面板，稳定生成、快速迭代" />
+  <meta property="og:description" content="木头泛程序是一套偏工程化的程序生成与部署面板，围绕任务编排、模型调用与可验证反馈进行设计。你可以在同一界面里管理生成记录、查看运行耗时与失败原因、切换不同模型并对输出进行替换与重试。面板提供清晰的状态标签与操作按钮，让每一步的进度可追踪、结果可复核，并用结构化数据呈现生成字数、耗时区间与成功率趋势，帮助团队在高频迭代中保持节奏与稳定性。适用于把想法快速落成可运行脚本，也适合将既有流程批量升级。" />
+  <meta property="og:url" content="https://mtfcx.pages.dev/" />
+  <meta property="og:site_name" content="木头泛程序" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="木头泛程序：可控的程序生成与部署面板，稳定生成、快速迭代" />
+  <meta name="twitter:description" content="木头泛程序是一套偏工程化的程序生成与部署面板，围绕任务编排、模型调用与可验证反馈进行设计。你可以在同一界面里管理生成记录、查看运行耗时与失败原因、切换不同模型并对输出进行替换与重试。面板提供清晰的状态标签与操作按钮，让每一步的进度可追踪、结果可复核，并用结构化数据呈现生成字数、耗时区间与成功率趋势，帮助团队在高频迭代中保持节奏与稳定性。适用于把想法快速落成可运行脚本，也适合将既有流程批量升级。" />
+  <meta name="twitter:site" content="@木头泛程序" />
+  
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta name="renderer" content="webkit">
+<meta name="format-detection" content="telephone=no">
+<script type="application/ld+json">{"@context":"https://ziyuan.baidu.com/contexts/cambrian.jsonld","@id":"https://mtfcx.pages.dev/","title":"木头泛程序：可控的程序生成与部署面板，稳定生成、快速迭代","pubDate":"2026-10-17T23:13:58","upDate":"2026-10-17T23:13:58"}</script>
+<link rel="stylesheet" href="assets/7qwct5.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="navshell">
+        <div class="nav-left">
+          <div class="brandmark" aria-hidden="true">木</div>
+          <div class="brandword">
+            <div class="name">木头泛程序</div>
+            <div class="tag">工程化程序生成与部署面板</div>
+          </div>
+        </div>
+
+        <nav class="nav-mid" aria-label="主导航">
+          <div class="navpill" role="group" aria-label="页面导航">
+            <a class="navitem active" href="#overview" aria-current="page">面板概览</a>
+            <a class="navitem" href="#capabilities">核心能力</a>
+            <a class="navitem" href="#modules">扩展模块</a>
+            <a class="navitem" href="#records">运行记录</a>
+            <a class="navitem" href="#faq">常见问题</a>
+          </div>
+        </nav>
+
+        <div class="nav-right">
+          <div class="cmdsearch">
+            <div class="cmdicon" aria-hidden="true">⌘</div>
+            <input id="cmdInput" type="search" inputmode="search" placeholder="搜索任务、模型或状态（示例：生成成功）" aria-label="搜索任务、模型或状态" />
+            <div class="cmdkbd" aria-hidden="true">
+              <span class="kbd">/</span>
+              <span class="kbd">Enter</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" id="primaryCTA" type="button">
+            <span class="icon" aria-hidden="true">⚡</span>
+            启动生成流程
+          </button>
+
+          <button class="mobile-toggle" id="mobileToggle" type="button" aria-expanded="false" aria-controls="mobilePanel" aria-label="打开移动端菜单">
+            <span aria-hidden="true" style="font-weight:900; color:var(--brand2);">☰</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-panel" id="mobilePanel">
+        <div class="row">
+          <a class="navitem active" href="#overview">面板概览 <span aria-hidden="true">→</span></a>
+          <a class="navitem" href="#capabilities">核心能力 <span aria-hidden="true">→</span></a>
+          <a class="navitem" href="#modules">扩展模块 <span aria-hidden="true">→</span></a>
+          <a class="navitem" href="#records">运行记录 <span aria-hidden="true">→</span></a>
+          <a class="navitem" href="#faq">常见问题 <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="crumbs" aria-label="面包屑">
+      <a href="#overview">首页</a>
+      <span class="sep2" aria-hidden="true"></span>
+      <span>木头泛程序</span>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="hero" id="overview">
+      <div class="hero-shell">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-kicker">
+              <div class="chip"><span class="dot" aria-hidden="true"></span> 可控输出 · 实时状态 · 可复核结果</div>
+            </div>
+            <h1>木头泛程序：把生成变成可执行的工程节奏</h1>
+            <p class="hero-sub">
+              以“控制面板”方式管理程序生成与部署：同屏追踪每次生成的模型、耗时、字数与状态，
+              让替换、重试与删除等操作拥有明确的反馈路径，减少试错成本。
+            </p>
+
+            <div class="hero-actions">
+              <button class="btn btn-primary" id="jumpToPanel" type="button">
+                <span class="icon" aria-hidden="true">🧭</span>
+                查看运行面板
+              </button>
+              <button class="btn btn-ghost" id="downloadSpec" type="button">
+                <span class="icon" aria-hidden="true">📎</span>
+                获取字段说明
+              </button>
+              <button class="btn btn-danger" id="resetDemo" type="button" title="模拟清空面板状态">
+                <span class="icon" aria-hidden="true">↺</span>
+                重置演示
+              </button>
+            </div>
+
+            <div class="hero-meta" aria-label="关键指标">
+              <div class="stat">
+                <div class="top">
+                  <div class="label">当日生成稳定性</div>
+                  <div class="value" id="stabilityValue">99.2%</div>
+                </div>
+                <div class="hint" id="stabilityHint">失败更可控：可追踪原因、可快速重试</div>
+              </div>
+              <div class="stat">
+                <div class="top">
+                  <div class="label">平均耗时（短任务）</div>
+                  <div class="value" id="avgTime">6.8s</div>
+                </div>
+                <div class="hint" id="avgTimeHint">在高频迭代中保持节奏与可验证反馈</div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="preview" aria-label="面板预览">
+            <div class="preview-top">
+              <div class="preview-title">
+                运行队列
+                <span>可见字段 · 可执行操作</span>
+              </div>
+              <div class="preview-tools">
+                <div class="seg" role="tablist" aria-label="筛选模式">
+                  <button class="active" type="button" data-filter="all" role="tab" aria-selected="true">全部</button>
+                  <button type="button" data-filter="ok" role="tab" aria-selected="false">成功</button>
+                  <button type="button" data-filter="warn" role="tab" aria-selected="false">失败</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="tablewrap" id="panelTable">
+              <div class="thead" aria-hidden="true">
+                <div> </div>
+                <div>站点</div>
+                <div>时间</div>
+                <div>模型</div>
+                <div class="col-hide">生成字数</div>
+                <div>状态</div>
+                <div class="col-md">上传</div>
+                <div class="th-right">操作</div>
+              </div>
+
+              <!-- 行 1 -->
+              <div class="rowcard demo-row" data-status="ok">
+                <div class="check" aria-hidden="true">✓</div>
+                <div class="sitecell">
+                  <div class="title">木头泛目录序列</div>
+                  <div class="sub">mtfcx-pages-001</div>
+                </div>
+                <div class="timecell">
+                  <div>开始 10-17 21:31</div>
+                  <div>结束 10-17 21:51</div>
+                </div>
+                <div>
+                  <span class="modelbadge"><span class="gh">GH</span> deepseek-flash</span>
+                </div>
+                <div class="genmeta col-hide">
+                  <div><span class="strongred">生成 15m28s</span></div>
+                  <div><span class="strongblue">字数 3746</span></div>
+                </div>
+                <div>
+                  <span class="statuspill ok">生成成功</span>
+                </div>
+                <div class="col-md">
+                  <span class="statuspill up" style="padding:7px 12px;">已上传</span>
+                </div>
+                <div class="actions">
+                  <button class="iconbtn" type="button" data-action="retry" aria-label="重试">↻</button>
+                  <button class="iconbtn" type="button" data-action="replace" aria-label="替换输出">⟲</button>
+                  <button class="iconbtn danger" type="button" data-action="delete" aria-label="删除记录">🗑</button>
+                </div>
+              </div>
+
+              <!-- 行 2 -->
+              <div class="rowcard demo-row" data-status="warn">
+                <div class="check" aria-hidden="true"> </div>
+                <div class="sitecell">
+                  <div class="title">控制台脚手架</div>
+                  <div class="sub">scaffold-ctl-002</div>
+                </div>
+                <div class="timecell">
+                  <div>开始 10-17 21:40</div>
+                  <div>结束 10-17 21:49</div>
+                </div>
+                <div>
+                  <span class="modelbadge" style="border-color:rgba(231,107,74,.28); background:rgba(231,107,74,.08);">
+                    <span class="gh" style="background:rgba(231,107,74,.14); border-color:rgba(231,107,74,.26); color:#8a2f20;">GH</span>
+                    deepseek-reason
+                  </span>
+                </div>
+                <div class="genmeta col-hide">
+                  <div><span class="strongred">失败 0字节</span></div>
+                  <div>原因：格式约束冲突</div>
+                </div>
+                <div>
+                  <span class="statuspill" style="background:rgba(227,90,58,.10); border-color:rgba(227,90,58,.30); color:#8f2b1d;">生成失败</span>
+                </div>
+                <div class="col-md">
+                  <span class="statuspill" style="padding:7px 12px; background:rgba(90,122,116,.08); border-color:rgba(90,122,116,.18); color:rgba(12,47,42,.82);">未上传</span>
+                </div>
+                <div class="actions">
+                  <button class="iconbtn" type="button" data-action="retry" aria-label="重试">↻</button>
+                  <button class="iconbtn" type="button" data-action="replace" aria-label="替换输出">⟲</button>
+                  <button class="iconbtn danger" type="button" data-action="delete" aria-label="删除记录">🗑</button>
+                </div>
+              </div>
+
+              <!-- 行 3 -->
+              <div class="rowcard demo-row" data-status="ok">
+                <div class="check" aria-hidden="true">✓</div>
+                <div class="sitecell">
+                  <div class="title">面板字段映射</div>
+                  <div class="sub">field-map-003</div>
+                </div>
+                <div class="timecell">
+                  <div>开始 10-17 21:45</div>
+                  <div>结束 10-17 21:51</div>
+                </div>
+                <div>
+                  <span class="modelbadge" style="border-color:rgba(11,107,97,.28);">
+                    <span class="gh" style="background:rgba(11,107,97,.14); border-color:rgba(11,107,97,.26); color:#0b3b35;">GH</span>
+                    gpt-compact
+                  </span>
+                </div>
+                <div class="genmeta col-hide">
+                  <div><span class="strongred">生成 7m41s</span></div>
+                  <div><span class="strongblue">字数 1689</span></div>
+                </div>
+                <div>
+                  <span class="statuspill ok" style="background:rgba(231,107,74,.10);">生成成功</span>
+                </div>
+                <div class="col-md">
+                  <span class="statuspill up" style="padding:7px 12px;">已上传</span>
+                </div>
+                <div class="actions">
+                  <button class="iconbtn" type="button" data-action="retry" aria-label="重试">↻</button>
+                  <button class="iconbtn" type="button" data-action="replace" aria-label="替换输出">⟲</button>
+                  <button class="iconbtn danger" type="button" data-action="delete" aria-label="删除记录">🗑</button>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="capabilities">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">木头泛程序把“生成”做成“可控输出”</h2>
+          <p class="section-desc">工程化信息密度：用字段、状态与操作按钮，让每一次生成都能被定位、复核与接入下一步流程。</p>
+        </div>
+        <div class="mini-tag">控制面板风格 · 高可验证反馈</div>
+      </div>
+
+      <div class="cards" role="list" aria-label="核心能力列表">
+        <article class="card" role="listitem">
+          <div class="k">
+            <h3 class="h">实时状态标签</h3>
+            <span class="mini-tag">进行中 / 成功 / 失败</span>
+          </div>
+          <p class="p">每条记录对应明确状态与原因线索；失败不会“沉默”，可直接触发重试与替换。</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="k">
+            <h3 class="h">模型切换可追踪</h3>
+            <span class="mini-tag">同字段对比</span>
+          </div>
+          <p class="p">在同一面板里查看不同模型的耗时、字数与结果质量，方便团队做工程决策。</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="k">
+            <h3 class="h">操作按钮明确反馈</h3>
+            <span class="mini-tag">重试 · 替换 · 删除</span>
+          </div>
+          <p class="p">操作级别小而清晰：你能看到它影响哪条记录，避免“改了但不知道”的情况。</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="k">
+            <h3 class="h">生成耗时与字数结构化</h3>
+            <span class="mini-tag">可复核指标</span>
+          </div>
+          <p class="p">将关键指标做成可视字段：耗时、字数与区间，让结果的节奏更可控。</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="k">
+            <h3 class="h">失败原因直接落到字段</h3>
+            <span class="mini-tag">可验证修正</span>
+          </div>
+          <p class="p">把常见冲突映射到可行动解释，减少“反复猜测提示”的成本。</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="k">
+            <h3 class="h">适配高频迭代节奏</h3>
+            <span class="mini-tag">节奏快 · 结构稳</span>
+          </div>
+          <p class="p">把常用动作集中在单条记录内：替换、重试与删除一步到位。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="modules">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">扩展模块：让流程更像工程</h2>
+          <p class="section-desc">从字段映射到队列管理，木头泛程序把常见模块做成可复用单元，便于你把生成接进现有工作流。</p>
+        </div>
+        <div class="mini-tag">字段优先 · 操作优先</div>
+      </div>
+
+      <div class="cards" aria-label="扩展模块卡片">
+        <div class="listcard" style="grid-column: span 4;">
+          <div class="section-title" style="font-size:15px; margin:0;">字段映射面板</div>
+          <p class="section-desc" style="margin-top:8px;">把“输入约束”和“输出字段”统一成同一套格式，便于多模型对比。</p>
+          <div class="rowitem" style="margin-top:12px;">
+            <div class="left">
+              <p class="t">字段对齐检查</p>
+              <div class="s">对关键字段做一致性约束，减少格式冲突造成的失败。</div>
+            </div>
+            <div class="right">
+              <span class="badge good">稳定</span>
+              <span class="badge">快速验证</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="listcard" style="grid-column: span 4;">
+          <div class="section-title" style="font-size:15px; margin:0;">队列与节拍控制</div>
+          <p class="section-desc" style="margin-top:8px;">把生成动作按队列组织，让执行节奏更可预期。</p>
+          <div class="rowitem" style="margin-top:12px;">
+            <div class="left">
+              <p class="t">任务分组执行</p>
+              <div class="s">同类任务集中处理，减少上下文切换导致的波动。</div>
+            </div>
+            <div class="right">
+              <span class="badge">可追踪</span>
+              <span class="badge good">高命中</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="listcard" style="grid-column: span 4;">
+          <div class="section-title" style="font-size:15px; margin:0;">结果替换与重试策略</div>
+          <p class="section-desc" style="margin-top:8px;">让“再来一次”变成策略动作，而不是手动重复。</p>
+          <div class="rowitem" style="margin-top:12px;">
+            <div class="left">
+              <p class="t">失败后自动建议</p>
+              <div class="s">把常见失败点映射为可修正方向，支持快速重试。</div>
+            </div>
+            <div class="right">
+              <span class="badge warn">可修正</span>
+              <span class="badge">减少试错</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="records">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">运行记录：让每条结果都能被复核</h2>
+          <p class="section-desc">用面板式字段承载信息密度：站点、时间、模型、字数、状态与操作都在同一行中。</p>
+        </div>
+        <div class="mini-tag">卡片式表格单元</div>
+      </div>
+
+      <div class="cards" aria-label="运行记录补充说明">
+        <div class="listcard" style="grid-column: span 6;">
+          <div class="section-title" style="font-size:15px; margin:0;">状态语义与可行动线索</div>
+          <p class="section-desc" style="margin-top:8px;">成功与失败不是两端颜色，而是可指导下一步操作的明确语义。</p>
+
+          <div class="rowitem">
+            <div class="left">
+              <p class="t">生成成功</p>
+              <div class="s">记录会保留关键指标（耗时与字数），你可以直接执行替换或复核策略。</div>
+            </div>
+            <div class="right">
+              <span class="badge good">成功</span>
+            </div>
+          </div>
+
+          <div class="rowitem">
+            <div class="left">
+              <p class="t">生成失败</p>
+              <div class="s">失败原因会落到字段描述，支持重试时缩小变化范围。</div>
+            </div>
+            <div class="right">
+              <span class="badge warn">失败</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="listcard" style="grid-column: span 6;">
+          <div class="section-title" style="font-size:15px; margin:0;">结果质量对比更省力</div>
+          <p class="section-desc" style="margin-top:8px;">通过模型标签与结构化指标，让“为什么这次不一样”更快定位。</p>
+
+          <div class="rowitem">
+            <div class="left">
+              <p class="t">模型标签（可读且可比）</p>
+              <div class="s">同一行里清楚显示模型与结果字段，便于做工程决策。</div>
+            </div>
+            <div class="right">
+              <span class="badge">模型</span>
+              <span class="badge">字段一致</span>
+            </div>
+          </div>
+
+          <div class="rowitem">
+            <div class="left">
+              <p class="t">耗时与字数作为节拍信号</p>
+              <div class="s">耗时更短并不一定更好，但能帮助你快速判断节奏是否偏离预期。</div>
+            </div>
+            <div class="right">
+              <span class="badge good">节奏稳定</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="验证与证据模块">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">工程化反馈：你能看到进度，也能看到结果</h2>
+          <p class="section-desc">木头泛程序把反馈做成“可确认”：指标、状态与操作紧密绑定，减少不确定性。</p>
+        </div>
+        <div class="mini-tag">效率导向</div>
+      </div>
+
+      <div class="cards">
+        <div class="card" style="grid-column: span 3;">
+          <div class="k">
+            <h3 class="h">队列可控</h3>
+            <span class="mini-tag">节拍</span>
+          </div>
+          <p class="p">把生成动作按记录组织，操作影响范围清晰。</p>
+        </div>
+        <div class="card" style="grid-column: span 3;">
+          <div class="k">
+            <h3 class="h">字段可读</h3>
+            <span class="mini-tag">结构</span>
+          </div>
+          <p class="p">关键指标与标签统一呈现，便于快速复核。</p>
+        </div>
+        <div class="card" style="grid-column: span 3;">
+          <div class="k">
+            <h3 class="h">失败可修</h3>
+            <span class="mini-tag">原因</span>
+          </div>
+          <p class="p">失败不只是状态，还提供与重试相关的线索。</p>
+        </div>
+        <div class="card" style="grid-column: span 3;">
+          <div class="k">
+            <h3 class="h">操作可追</h3>
+            <span class="mini-tag">按钮</span>
+          </div>
+          <p class="p">重试、替换、删除都在同一行内，让节奏更连贯。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="应用场景板块">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">常见需求，从一张面板开始</h2>
+          <p class="section-desc">把“生成结果”快速落到可运行的工程输出，同时保留每一步的可追踪证据。</p>
+        </div>
+        <div class="mini-tag">真实可落地</div>
+      </div>
+
+      <div class="cards">
+        <div class="listcard" style="grid-column: span 6;">
+          <div class="section-title" style="font-size:15px; margin:0;">从需求到脚手架</div>
+          <p class="section-desc" style="margin-top:8px;">把结构化字段与约束绑定到生成记录里，输出更贴近你要的工程形态。</p>
+          <div class="rowitem">
+            <div class="left">
+              <p class="t">快速生成可复核内容</p>
+              <div class="s">把耗时与字数当作节拍信号，帮助你做版本节奏判断。</div>
+            </div>
+            <div class="right">
+              <span class="badge good">可验证</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="listcard" style="grid-column: span 6;">
+          <div class="section-title" style="font-size:15px; margin:0;">把既有流程批量升级</div>
+          <p class="section-desc" style="margin-top:8px;">同一面板管理替换与重试，适合把旧输出进行一致性修订。</p>
+          <div class="rowitem">
+            <div class="left">
+              <p class="t">统一字段与输出规范</p>
+              <div class="s">减少多轮复制粘贴导致的差异，让替换结果更稳定。</div>
+            </div>
+            <div class="right">
+              <span class="badge">字段对齐</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="收口行动区">
+      <div class="ctaband">
+        <div class="ctagrid">
+          <div>
+            <h3>让你的生成记录具备“可操作的证据链”</h3>
+            <p>把每次生成的模型、耗时、字数与状态集中在同一行。成功时能快速替换，失败时能立即重试并锁定关键原因。</p>
+            <div class="helptext">演示面板已内置：你可以在下方触发模拟动作，观察状态与字段联动反馈。</div>
+          </div>
+
+          <div class="formbox" role="form" aria-label="联系与演示">
+            <div class="field">
+              <input id="emailInput" type="email" placeholder="填写邮箱，接收木头泛程序的字段示例" aria-label="邮箱" />
+            </div>
+            <button class="btn btn-primary" id="requestDemo" type="button">
+              <span class="icon" aria-hidden="true">📨</span>
+              领取字段示例
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-label="常见问题">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">木头泛程序常见问题</h2>
+          <p class="section-desc">围绕状态可追踪、失败可修与字段结构，给出你关心的直接答案。</p>
+        </div>
+        <div class="mini-tag">简短、可落地</div>
+      </div>
+
+      <div class="faq">
+        <details class="faqitem" open>
+          <summary>
+            <div class="q">木头泛程序与“纯生成”有什么区别？</div>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </summary>
+          <div class="a">
+            它把生成结果变成可管理记录：同一界面展示模型、耗时、字数与状态，并把替换、重试、删除这些操作绑定到具体行。
+            你能用字段复核，而不是只依赖一次性文本输出。
+          </div>
+        </details>
+
+        <details class="faqitem">
+          <summary>
+            <div class="q">失败时是否有可行动线索？</div>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </summary>
+          <div class="a">
+            会。失败不只显示“失败”，还会在记录中呈现与约束冲突相关的提示，
+            让重试时的修正方向更明确，从而减少反复试探。
+          </div>
+        </details>
+
+        <details class="faqitem">
+          <summary>
+            <div class="q">能否进行输出替换而不丢失上下文？</div>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </summary>
+          <div class="a">
+            可以。替换是针对具体记录执行的动作，结合同字段指标（耗时、字数与状态）便于你比较版本差异，
+            让“改了但不知道差在哪”变得更少。
+          </div>
+        </details>
+
+        <details class="faqitem">
+          <summary>
+            <div class="q">面板里的字段是否便于团队协作？</div>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </summary>
+          <div class="a">
+            是的。木头泛程序采用面板式字段呈现，把模型标签、时间信息、生成指标与操作放在同一行结构中，
+            团队可以用同一套字段口径快速定位问题与复核结果。
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div class="left">
+          <div class="brandmark" aria-hidden="true" style="width:42px;height:42px;">木</div>
+          <div>
+            <div style="font-weight:950; letter-spacing:.01em;">木头泛程序</div>
+            <div class="meta">
+              工程化程序生成与部署面板。以可控输出、实时状态和可复核字段为核心，让迭代节奏更稳定。
+            </div>
+            <div class="copyright" aria-label="版权信息">
+              <span>版权所有</span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>木头泛程序</span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footlinks" aria-label="页脚链接">
+          <a href="#overview">面板概览</a>
+          <a href="#capabilities">核心能力</a>
+          <a href="#modules">扩展模块</a>
+          <a href="#records">运行记录</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function(){
+      const $ = (sel, root=document) => root.querySelector(sel);
+      const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+      // Mobile toggle
+      const mobileToggle = $('#mobileToggle');
+      const mobilePanel = $('#mobilePanel');
+      if(mobileToggle && mobilePanel){
+        mobileToggle.addEventListener('click', ()=>{
+          const isOpen = mobileToggle.getAttribute('aria-expanded') === 'true';
+          mobileToggle.setAttribute('aria-expanded', String(!isOpen));
+          mobilePanel.style.display = isOpen ? 'none' : 'block';
+          mobilePanel.scrollIntoView({behavior:'smooth', block:'nearest'});
+        });
+      }
+
+      // Smooth jump
+      const jump = (id)=>{
+        const el = document.getElementById(id);
+        if(!el) return;
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+      };
+
+      $('#jumpToPanel')?.addEventListener('click', ()=> jump('records'));
+      $('#primaryCTA')?.addEventListener('click', ()=>{
+        jump('records');
+        flashToast('已进入运行面板演示区：可对记录执行重试/替换/删除。');
+      });
+
+      // Simple toast
+      let toastTimer = null;
+      function flashToast(text){
+        const existing = $('#__toast__');
+        if(existing) existing.remove();
+        const t = document.createElement('div');
+        t.id = '__toast__';
+        t.textContent = text;
+        t.setAttribute('role','status');
+        t.setAttribute('aria-live','polite');
+        t.style.cssText = `
+          position:fixed; left:50%; top:72px; transform:translateX(-50%);
+          background: rgba(255,255,255,.92);
+          border:1px solid rgba(15,76,68,.18);
+          box-shadow: 0 18px 50px rgba(8,52,47,.18);
+          border-radius: 14px;
+          padding: 10px 14px;
+          z-index: 1000;
+          color: #0c2f2a;
+          font-weight: 850;
+          font-size: 13.5px;
+          max-width: min(680px, calc(100% - 20px));
+        `;
+        document.body.appendChild(t);
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(()=>{ t.remove(); }, 2600);
+      }
+
+      // Panel filter tabs
+      const tabs = $$('.seg button');
+      const rows = $$('.demo-row');
+      function setActiveTab(target){
+        tabs.forEach(b=>{
+          const on = b.dataset.filter === target;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-selected', String(on));
+        });
+      }
+      function applyFilter(filter){
+        rows.forEach(r=>{
+          const st = r.dataset.status;
+          if(filter === 'all') r.style.display = '';
+          else if(filter === 'ok') r.style.display = st === 'ok' ? '' : 'none';
+          else if(filter === 'warn') r.style.display = st === 'warn' ? '' : 'none';
+        });
+      }
+      tabs.forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const filter = btn.dataset.filter || 'all';
+          setActiveTab(filter);
+          applyFilter(filter);
+          flashToast('已应用筛选：' + (filter==='all'?'全部':filter==='ok'?'仅成功':'仅失败'));
+        });
+      });
+
+      // Actions simulation on rows
+      const panel = $('#panelTable');
+      if(panel){
+        panel.addEventListener('click', (e)=>{
+          const btn = e.target.closest('button[data-action]');
+          if(!btn) return;
+          const action = btn.dataset.action;
+          const row = e.target.closest('.demo-row');
+          if(!row) return;
+
+          const oldStatus = row.dataset.status;
+          if(action === 'delete'){
+            row.style.display = 'none';
+            flashToast('已删除该记录（演示）。');
+            return;
+          }
+
+          if(action === 'replace'){
+            // Toggle to success
+            row.dataset.status = 'ok';
+            const statusEl = row.querySelector('.statuspill');
+            if(statusEl){
+              statusEl.classList.remove('ok');
+              statusEl.classList.add('ok');
+              statusEl.textContent = '生成成功';
+              statusEl.style.background = 'rgba(231,107,74,.12)';
+              statusEl.style.borderColor = 'rgba(231,107,74,.38)';
+              statusEl.style.color = '#8b2e21';
+            }
+            row.querySelectorAll('.badge, .genmeta .strongred, .genmeta .strongblue');
+            flashToast('已替换输出：状态更新为生成成功（演示）。');
+            if(oldStatus !== 'ok'){
+              updateHeroStats(true);
+            }
+            return;
+          }
+
+          if(action === 'retry'){
+            // 50/50 demo: if oldStatus warn => become ok
+            if(oldStatus === 'warn'){
+              row.dataset.status = 'ok';
+              const statusEl = row.querySelector('.statuspill');
+              if(statusEl){
+                statusEl.classList.remove('ok');
+                statusEl.classList.add('ok');
+                statusEl.textContent = '生成成功';
+                statusEl.style.background = 'rgba(231,107,74,.12)';
+                statusEl.style.borderColor = 'rgba(231,107,74,.38)';
+                statusEl.style.color = '#8b2e21';
+              }
+              // Update metrics
+              const metaHide = row.querySelector('.genmeta.col-hide');
+              if(metaHide){
+                metaHide.innerHTML = '<div><span class="strongred">生成 5m12s</span></div><div><span class="strongblue">字数 2210</span></div>';
+              }
+              const upEl = row.querySelector('.col-md .statuspill');
+              if(upEl){
+                upEl.textContent = '已上传';
+                upEl.classList.remove('statuspill');
+              }
+              flashToast('重试完成：生成成功（演示）。');
+              updateHeroStats(true);
+            }else{
+              flashToast('重试进行中：保持当前记录状态（演示）。');
+              // slight stat drift
+              updateHeroStats(false);
+            }
+            return;
+          }
+        });
+      }
+
+      function updateHeroStats(success){
+        const stability = $('#stabilityValue');
+        const avgTime = $('#avgTime');
+        if(!stability || !avgTime) return;
+
+        const s = parseFloat(stability.textContent.replace('%','')) || 99.2;
+        const t = parseFloat(avgTime.textContent.replace('s','')) || 6.8;
+
+        if(success){
+          const ns = Math.min(99.9, s + (Math.random()*0.1+0.03));
+          const nt = Math.max(4.6, t - (Math.random()*0.35+0.15));
+          stability.textContent = ns.toFixed(1) + '%';
+          avgTime.textContent = nt.toFixed(1) + 's';
+          $('#stabilityHint') && ($('#stabilityHint').textContent = '成功记录提升稳定性；字段反馈更清晰');
+          $('#avgTimeHint') && ($('#avgTimeHint').textContent = '短任务节奏更快，迭代更顺滑');
+        }else{
+          const ns = Math.max(95.8, s - (Math.random()*0.08+0.02));
+          const nt = Math.min(9.2, t + (Math.random()*0.28+0.06));
+          stability.textContent = ns.toFixed(1) + '%';
+          avgTime.textContent = nt.toFixed(1) + 's';
+        }
+      }
+
+      $('#resetDemo')?.addEventListener('click', ()=>{
+        // Restore the preview rows to original state (basic)
+        const allRows = $$('.demo-row');
+        allRows.forEach((r)=>{
+          r.style.display = '';
+          const title = r.querySelector('.sitecell .title')?.textContent || '';
+          if(title.includes('控制台脚手架')){
+            r.dataset.status = 'warn';
+            const st = r.querySelector('.statuspill');
+            if(st){
+              st.textContent = '生成失败';
+              st.style.background = 'rgba(227,90,58,.10)';
+              st.style.borderColor = 'rgba(227,90,58,.30)';
+              st.style.color = '#8f2b1d';
+              st.classList.remove('ok');
+            }
+            const metaHide = r.querySelector('.genmeta.col-hide');
+            if(metaHide){
+              metaHide.innerHTML = '<div><span class="strongred">失败 0字节</span></div><div>原因：格式约束冲突</div>';
+            }
+            const upEl = r.querySelector('.col-md .statuspill');
+            if(upEl){
+              upEl.textContent = '未上传';
+              upEl.style.background = 'rgba(90,122,116,.08)';
+              upEl.style.borderColor = 'rgba(90,122,116,.18)';
+              upEl.style.color = 'rgba(12,47,42,.82)';
+            }
+          }else{
+            r.dataset.status = 'ok';
+            const st = r.querySelector('.statuspill');
+            if(st){
+              st.textContent = '生成成功';
+              st.style.background = 'rgba(231,107,74,.12)';
+              st.style.borderColor = 'rgba(231,107,74,.38)';
+              st.style.color = '#8b2e21';
+              st.classList.add('ok');
+            }
+            const metaHide = r.querySelector('.genmeta.col-hide');
+            if(metaHide){
+              if(title.includes('面板字段映射')){
+                metaHide.innerHTML = '<div><span class="strongred">生成 7m41s</span></div><div><span class="strongblue">字数 1689</span></div>';
+              }else{
+                metaHide.innerHTML = '<div><span class="strongred">生成 15m28s</span></div><div><span class="strongblue">字数 3746</span></div>';
+              }
+            }
+            const upEl = r.querySelector('.col-md .statuspill');
+            if(upEl){
+              upEl.textContent = '已上传';
+              upEl.style.background = 'rgba(31,138,112,.10)';
+              upEl.style.borderColor = 'rgba(31,138,112,.28)';
+              upEl.style.color = '#16624b';
+            }
+          }
+        });
+        setActiveTab('all');
+        applyFilter('all');
+        $('#stabilityValue') && ($('#stabilityValue').textContent = '99.2%');
+        $('#avgTime') && ($('#avgTime').textContent = '6.8s');
+        flashToast('演示面板已重置：恢复默认记录与字段反馈。');
+      });
+
+      // Search demo
+      const cmdInput = $('#cmdInput');
+      cmdInput?.addEventListener('keydown', (e)=>{
+        if(e.key === 'Enter'){
+          const q = cmdInput.value.trim();
+          if(!q){
+            flashToast('请输入搜索关键词，例如：生成成功 或 失败');
+            return;
+          }
+          const qLower = q.toLowerCase();
+          let hit = false;
+
+          rows.forEach(r=>{
+            const st = (r.dataset.status === 'ok') ? '生成成功' : '生成失败';
+            const text = (r.textContent || '') + ' ' + st;
+            const ok = text.toLowerCase().includes(qLower);
+            r.style.display = ok ? '' : 'none';
+            if(ok) hit = true;
+          });
+
+          if(hit){
+            flashToast('搜索命中：已筛选到相关记录。');
+          }else{
+            flashToast('搜索未命中：未找到与该关键词相关的记录（演示）。');
+          }
+        }
+      });
+
+      // CTA forms (demo)
+      $('#requestDemo')?.addEventListener('click', ()=>{
+        const v = ($('#emailInput')?.value || '').trim();
+        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+        if(!emailOk){
+          flashToast('请填写有效邮箱地址，才能接收字段示例（演示）。');
+          $('#emailInput')?.focus();
+          return;
+        }
+        flashToast('已发送领取请求：字段示例将发送到你的邮箱（演示）。');
+        $('#emailInput').value = '';
+      });
+
+      $('#downloadSpec')?.addEventListener('click', ()=>{
+        flashToast('字段说明已准备就绪：包含状态、时间、模型标签与字数指标（演示）。');
+        jump('modules');
+      });
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "木头泛程序",
+    "url": "https://mtfcx.pages.dev/",
+    "description": "木头泛程序是一套工程化的程序生成与部署面板：用结构化字段呈现模型、耗时、字数与状态，并提供重试、替换、删除等操作的可验证反馈。",
+    "inLanguage": "zh-CN",
+    "publisher": {
+      "@type": "Organization",
+      "name": "木头泛程序"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://mtfcx.pages.dev/#records?query={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</body>
+</html
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div class="left">
+          <div class="brandmark" aria-hidden="true" style="width:42px;height:42px;">木</div>
+          <div>
+            <div style="font-weight:950; letter-spacing:.01em;">木头泛程序</div>
+            <div class="meta">
+              工程化程序生成与部署面板。把可控输出、实时状态和可复核字段放进同一张运行记录里，让迭代节奏更稳定。
+            </div>
+            <div class="copyright" aria-label="版权信息">
+              <span>版权所有</span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>木头泛程序</span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footlinks" aria-label="页脚栏目">
+          <a href="#overview">面板概览</a>
+          <a href="#capabilities">核心能力</a>
+          <a href="#modules">扩展模块</a>
+          <a href="#records">运行记录</a>
+          <a href="#faq">常见问题</a>
+          <a href="#overview" id="footerJumpToPanel">进入控制面板</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const footerJump = document.getElementById('footerJumpToPanel');
+      footerJump && footerJump.addEventListener('click', function(e){
+        e.preventDefault();
+        const el = document.getElementById('records');
+        if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    })();
+  </script>
+  </body>
+</html>
